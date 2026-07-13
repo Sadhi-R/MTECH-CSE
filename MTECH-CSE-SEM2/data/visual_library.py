@@ -493,7 +493,17 @@ VISUAL_BY_ID = {
     "RPA-U2-L03": vis_control_room, "RPA-U2-L04": vis_control_room, "RPA-U2-L05": vis_control_room,
     "RPA-U3-S02": vis_device_pool, "RPA-U3-L01": vis_device_pool, "RPA-U3-L05": vis_device_pool,
     "RPA-U4-S01": vis_recorders, "RPA-U4-L01": vis_recorders, "RPA-U4-L05": vis_recorders,
-    "RPA-U5-S05": vis_workflow, "RPA-U5-L03": vis_workflow, "RPA-U5-L04": vis_workflow,
+    "RPA-U5-S05": vis_workflow,     "RPA-U5-L03": vis_workflow, "RPA-U5-L04": vis_workflow,
+    # Mid-II 2024-25 official papers
+    "ACA-M2-D01": vis_pipeline, "ACA-M2-D02": vis_cache_coherence,
+    "ACA-M2-D03": vis_pthreads, "ACA-M2-D04": vis_flynn,
+    "ACA-M2-D05": vis_parallelism, "ACA-M2-D06": vis_parallelism,
+    "ACA-M2-O01": vis_shared_vs_distributed, "ACA-M2-O03": vis_flynn,
+    "ACA-M2-O08": vis_flynn, "ACA-M2-O10": vis_parallelism,
+    "RPA-M2-D01": vis_control_room, "RPA-M2-D02": vis_rpa_arch,
+    "RPA-M2-D03": vis_recorders, "RPA-M2-D04": vis_workflow,
+    "RPA-M2-D05": vis_workflow, "RPA-M2-D06": vis_workflow,
+    "RPA-M2-O01": vis_recorders, "RPA-M2-O07": vis_recorders,
 }
 
 # Keyword rules: (keywords, builder) — checked in order

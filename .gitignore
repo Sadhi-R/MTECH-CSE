@@ -1,0 +1,9 @@
+# Python build artifacts
+__pycache__/
+*.pyc
+.Python
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp

@@ -765,6 +765,448 @@ const SEARCH_INDEX = [
     "snippet": "Randomized rounding converts fractional LP solution to integer solution with bounded error. Chernoff bounds bound tail probability of sums of independent random"
   },
   {
+    "title": "Q1: Superscalar techniques and performance",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Unit-3",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO3"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-D01.html",
+    "snippet": "Superscalar processing issues multiple independent instructions per clock cycle using several parallel functional units."
+  },
+  {
+    "title": "Q2: Memory consistency models",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Unit-3",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO3"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-D02.html",
+    "snippet": "Memory consistency model defines what order memory operations appear to execute across multiple processors sharing memory."
+  },
+  {
+    "title": "Q3: Synchronization in multiprocessors",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Unit-4",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO4"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-D03.html",
+    "snippet": "Synchronization coordinates multiple processors/threads so shared data is accessed safely and in correct order."
+  },
+  {
+    "title": "Q4: SIMD and multivector architecture",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Unit-5",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO4"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-D04.html",
+    "snippet": "SIMD = one instruction operates on multiple data elements simultaneously. Multivector = multiple independent vector pipelines."
+  },
+  {
+    "title": "Q5: Compound vector processing",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Unit-5",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO5"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-D05.html",
+    "snippet": "Compound vector processing combines vector operations using chaining and segmented execution so results flow directly between pipeline stages without returning "
+  },
+  {
+    "title": "Q6: CM-5 architecture",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Unit-5",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO5"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-D06.html",
+    "snippet": "CM-5 (Connection Machine Model 5) is a massively parallel MIMD + SIMD hybrid supercomputer by Thinking Machines."
+  },
+  {
+    "title": "Mid-II MCQ Q1",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O01.html",
+    "snippet": "Correct Answer: (b) Shared Memory"
+  },
+  {
+    "title": "Mid-II MCQ Q2",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O02.html",
+    "snippet": "Correct Answer: (c) Data Hazard"
+  },
+  {
+    "title": "Mid-II MCQ Q3",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O03.html",
+    "snippet": "Correct Answer: (c) SIMD"
+  },
+  {
+    "title": "Mid-II MCQ Q4",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O04.html",
+    "snippet": "Correct Answer: (c) Improves throughput"
+  },
+  {
+    "title": "Mid-II MCQ Q5",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O05.html",
+    "snippet": "Correct Answer: (d) Memory Hazard"
+  },
+  {
+    "title": "Mid-II MCQ Q6",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O06.html",
+    "snippet": "Correct Answer: (b) Local to each processor"
+  },
+  {
+    "title": "Mid-II MCQ Q7",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O07.html",
+    "snippet": "Correct Answer: (b) Each processor executes a different instruction stream"
+  },
+  {
+    "title": "Mid-II MCQ Q8",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O08.html",
+    "snippet": "Correct Answer: (b) Single Instruction, Multiple Data"
+  },
+  {
+    "title": "Mid-II MCQ Q9",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O09.html",
+    "snippet": "Correct Answer: (b) Scheduler"
+  },
+  {
+    "title": "Mid-II MCQ Q10",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O10.html",
+    "snippet": "Correct Answer: (c) Scientific computations"
+  },
+  {
+    "title": "Mid-II MCQ Q11",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O11.html",
+    "snippet": "Correct Answer: memory (space)"
+  },
+  {
+    "title": "Mid-II MCQ Q12",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O12.html",
+    "snippet": "Correct Answer: data"
+  },
+  {
+    "title": "Mid-II MCQ Q13",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O13.html",
+    "snippet": "Correct Answer: multiple"
+  },
+  {
+    "title": "Mid-II MCQ Q14",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O14.html",
+    "snippet": "Correct Answer: vector"
+  },
+  {
+    "title": "Mid-II MCQ Q15",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O15.html",
+    "snippet": "Correct Answer: instruction"
+  },
+  {
+    "title": "Mid-II MCQ Q16",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O16.html",
+    "snippet": "Correct Answer: MIMD"
+  },
+  {
+    "title": "Mid-II MCQ Q17",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O17.html",
+    "snippet": "Correct Answer: (c) Same instruction on multiple data"
+  },
+  {
+    "title": "Mid-II MCQ Q18",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O18.html",
+    "snippet": "Correct Answer: (b) Increases instruction throughput"
+  },
+  {
+    "title": "Mid-II MCQ Q19",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O19.html",
+    "snippet": "Correct Answer: (a) Each processor runs a separate program"
+  },
+  {
+    "title": "Mid-II MCQ Q20",
+    "subject": "Advanced Computer Architecture",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/advanced-computer-architecture/questions/ACA-M2-O20.html",
+    "snippet": "Correct Answer: (d) Global memory accessible to all CPUs"
+  },
+  {
     "title": "Define parallelism.",
     "subject": "Advanced Computer Architecture",
     "unit": "Unit-1",
@@ -2263,6 +2705,448 @@ const SEARCH_INDEX = [
     "weight": "high",
     "path": "../subjects/parallel-computing/questions/PC-U5-L05.html",
     "snippet": "BFS uses a Queue (level-by-level). DFS uses a Stack/recursion (depth-first, backtrack)."
+  },
+  {
+    "title": "Q1: Audit Log relevance",
+    "subject": "Robotic Process Automation",
+    "unit": "Unit-3",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO3"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-D01.html",
+    "snippet": "Audit Log in Automation Anywhere Control Room records every bot action, user activity, and system event with timestamp and user identity."
+  },
+  {
+    "title": "Q2: API exposure in RPA",
+    "subject": "Robotic Process Automation",
+    "unit": "Unit-3",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO3"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-D02.html",
+    "snippet": "RPA uses software bots to automate repetitive, rule-based computer tasks by mimicking human clicks and typing."
+  },
+  {
+    "title": "Q3: Excel, String, XML commands",
+    "subject": "Robotic Process Automation",
+    "unit": "Unit-4",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO4"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-D03.html",
+    "snippet": "These are core Automation Anywhere commands for reading, manipulating, and writing structured business data during bot execution."
+  },
+  {
+    "title": "Q4: Three-command automation use case",
+    "subject": "Robotic Process Automation",
+    "unit": "Unit-4",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO4"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-D04.html",
+    "snippet": "A practical end-to-end bot combining multiple commands to automate a real business process."
+  },
+  {
+    "title": "Q5: FTP, PGP, Terminal commands",
+    "subject": "Robotic Process Automation",
+    "unit": "Unit-5",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO5"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-D05.html",
+    "snippet": "Advanced Automation Anywhere commands for file transfer, encryption, and legacy system access."
+  },
+  {
+    "title": "Q6: Workflow and Report Designers",
+    "subject": "Robotic Process Automation",
+    "unit": "Unit-5",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO5"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-D06.html",
+    "snippet": "Workflow Designer builds visual bot logic flows. Report Designer creates formatted output documents from bot data."
+  },
+  {
+    "title": "Mid-II MCQ Q1",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O01.html",
+    "snippet": "Correct Answer: (c) Screen Recorder"
+  },
+  {
+    "title": "Mid-II MCQ Q2",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O02.html",
+    "snippet": "Correct Answer: (d) Identify the process"
+  },
+  {
+    "title": "Mid-II MCQ Q3",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O03.html",
+    "snippet": "Correct Answer: (c) Loop"
+  },
+  {
+    "title": "Mid-II MCQ Q4",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O04.html",
+    "snippet": "Correct Answer: (c) Both web and desktop applications"
+  },
+  {
+    "title": "Mid-II MCQ Q5",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O05.html",
+    "snippet": "Correct Answer: (b) Pause"
+  },
+  {
+    "title": "Mid-II MCQ Q6",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O06.html",
+    "snippet": "Correct Answer: (b) Try-Catch"
+  },
+  {
+    "title": "Mid-II MCQ Q7",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O07.html",
+    "snippet": "Correct Answer: (a) Web Recorder"
+  },
+  {
+    "title": "Mid-II MCQ Q8",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O08.html",
+    "snippet": "Correct Answer: (b) Assign"
+  },
+  {
+    "title": "Mid-II MCQ Q9",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O09.html",
+    "snippet": "Correct Answer: (b) If"
+  },
+  {
+    "title": "Mid-II MCQ Q10",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O10.html",
+    "snippet": "Correct Answer: (c) Easier maintenance and reuse"
+  },
+  {
+    "title": "Mid-II MCQ Q11",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O11.html",
+    "snippet": "Correct Answer: Recorder (Screen/Smart/Web Recorder)"
+  },
+  {
+    "title": "Mid-II MCQ Q12",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O12.html",
+    "snippet": "Correct Answer: modular"
+  },
+  {
+    "title": "Mid-II MCQ Q13",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O13.html",
+    "snippet": "Correct Answer: Assign"
+  },
+  {
+    "title": "Mid-II MCQ Q14",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O14.html",
+    "snippet": "Correct Answer: Web"
+  },
+  {
+    "title": "Mid-II MCQ Q15",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O15.html",
+    "snippet": "Correct Answer: Try-Catch"
+  },
+  {
+    "title": "Mid-II MCQ Q16",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O16.html",
+    "snippet": "Correct Answer: If (If/Else)"
+  },
+  {
+    "title": "Mid-II MCQ Q17",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O17.html",
+    "snippet": "Correct Answer: (d) Captures actions on both web and desktop"
+  },
+  {
+    "title": "Mid-II MCQ Q18",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O18.html",
+    "snippet": "Correct Answer: (c) Allocates value to a variable"
+  },
+  {
+    "title": "Mid-II MCQ Q19",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O19.html",
+    "snippet": "Correct Answer: (b) Used for exception handling"
+  },
+  {
+    "title": "Mid-II MCQ Q20",
+    "subject": "Robotic Process Automation",
+    "unit": "Mid-II Objective",
+    "exam": "Mid-II 2024-25",
+    "tags": [
+      "mid-ii",
+      "mid2",
+      "past-paper",
+      "2024-25",
+      "CO-MCQ"
+    ],
+    "type": "short",
+    "weight": "high",
+    "path": "../subjects/robotic-process-automation/questions/RPA-M2-O20.html",
+    "snippet": "Correct Answer: (a) Captures browser-based interactions"
   },
   {
     "title": "Define RPA.",

@@ -10,13 +10,27 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
-from data.question_bank_full import QUESTIONS as _QB, UNITS, EXPECTED, PAST_PAPERS, SEMESTER  # noqa: E402
+from data.question_bank_full import QUESTIONS as _QB, UNITS, EXPECTED, PAST_PAPERS as _PAST_PAPERS, SEMESTER  # noqa: E402
 from data.answer_library import enrich  # noqa: E402
+from data.mid2_papers_2025 import MID2_PAPERS_2025, all_mid2_questions  # noqa: E402
 
 def _enriched_questions():
-    return {subj: [enrich(q) for q in qs] for subj, qs in _QB.items()}
+    base = {subj: [enrich(q) for q in qs] for subj, qs in _QB.items()}
+    for subj, extra in all_mid2_questions().items():
+        base[subj] = [enrich(q) for q in extra] + base[subj]
+    return base
 
 QUESTIONS = _enriched_questions()
+
+def _past_papers():
+    papers = {k: dict(v) for k, v in _PAST_PAPERS.items()}
+    for subj, data in MID2_PAPERS_2025.items():
+        papers[subj]["mid2_descriptive"] = data["descriptive_ids"]
+        papers[subj]["mid2_mcq"] = data["objective_ids"]
+        papers[subj]["mid2_exam"] = data["exam"]
+    return papers
+
+PAST_PAPERS = _past_papers()
 
 SUBJECTS = {
     "advanced-algorithms": {"code": "25CS21PC", "name": "Advanced Algorithms", "short": "AA", "syllabus": "aa-syllabus.png"},
@@ -138,6 +152,8 @@ def render_short(q: dict) -> str:
         parts.append(f'<section class="answer-section"><h3>Real-Time Example</h3><p>{q["example"]}</p></section>')
     if q.get("exam_keyword"):
         parts.append(f'<div class="callout callout-exam"><strong class="label">Exam Keyword</strong> <span class="kw-exam">{q["exam_keyword"]}</span></div>')
+    if q.get("mark5"):
+        parts.append(f'<div class="answer-panel"><h4>5-Mark Answer (Exam Ready)</h4><p>{q["mark5"]}</p></div>')
     if q.get("one_liner"):
         parts.append(f'<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>{q["one_liner"]}</div>')
     return "\n".join(parts)
@@ -284,10 +300,11 @@ def write_past(subject: str, data: dict) -> None:
     body = f"""
 <nav class="breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Previous Papers</span></nav>
 <h1>Previous Question Papers — {esc(SUBJECTS[subject]['name'])}</h1>
+{f'<div class="callout callout-exam"><strong class="label">Official Mid-II Paper</strong> {esc(data.get("mid2_exam", ""))} — descriptive + objective with full answers below.</div>' if data.get("mid2_exam") else ''}
 {list_section('Mid-I Descriptive (Answer any 4 × 5 marks)', data.get('mid1_descriptive', []))}
 {list_section('Mid-I MCQ / Objective Keys', data.get('mid1_mcq', []))}
-{list_section('Mid-II Descriptive', data.get('mid2_descriptive', []))}
-{list_section('Mid-II MCQ / Objective Keys', data.get('mid2_mcq', []))}"""
+{list_section('Mid-II Descriptive (Answer any 4 × 5 marks)', data.get('mid2_descriptive', []))}
+{list_section('Mid-II MCQ / Fill-ups / Match (Objective)', data.get('mid2_mcq', []))}"""
     (ROOT / "subjects" / subject / "previous-questions.html").write_text(shell("Past Papers", subject, "past", body), encoding="utf-8")
 
 
@@ -323,6 +340,34 @@ def _tag_str(q: dict) -> str:
 
 def write_mid_pages(subject: str, questions: list, which: str) -> None:
     key = "mid1" if which == "mid1" else "mid2"
+    if which == "mid2" and subject in MID2_PAPERS_2025:
+        paper = MID2_PAPERS_2025[subject]
+        desc = [enrich(q) for q in paper["descriptive"]]
+        obj = [enrich(q) for q in paper["objective"]]
+        filtered = desc + obj
+        exam_hdr = f'<div class="callout callout-exam"><strong class="label">Official Paper</strong> {esc(paper["exam"])} · Descriptive: answer any 4 × 5 marks · Objective: 10 MCQ + 6 fill-ups + 4 match</div>'
+        desc_cards = "".join(f"""<a class="card card-link" href="questions/{q['id']}.html">
+<span class="badge badge-important">5 Marks</span>
+<h3>{esc(q['title'])}</h3>
+<p class="text-sm">{esc(q['question'][:140])}</p>
+<div class="meta">{badges(q)}</div></a>""" for q in desc)
+        obj_cards = "".join(f"""<a class="card card-link" href="questions/{q['id']}.html">
+<span class="badge badge-exam">Objective</span>
+<h3>{esc(q['title'])}</h3>
+<p class="text-sm">{esc(q['question'][:100])}…</p>
+<div class="meta">{badges(q)}</div></a>""" for q in obj)
+        body = f"""
+<nav class="breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Mid-II</span></nav>
+<h1>{esc(SUBJECTS[subject]['name'])} — Mid-II 2024-25</h1>
+{exam_hdr}
+<p class="text-muted mb-2">Exact questions from university paper with clear answers and visual examples.</p>
+<h2>Descriptive ({len(desc)} questions — answer any 4)</h2>
+<div class="grid-2">{desc_cards}</div>
+<h2>Objective ({len(obj)} questions — all compulsory)</h2>
+<div class="grid-2">{obj_cards}</div>
+<div class="callout callout-tip"><strong class="label">Also see</strong> <a href="previous-questions.html">Past Papers</a> for Mid-I and full paper listing.</div>"""
+        (ROOT / "subjects" / subject / f"{which}.html").write_text(shell("Mid-II", subject, key, body), encoding="utf-8")
+        return
     if which == "mid1":
         filtered = [q for q in questions if "mid-i" in q.get("asked", "").lower() or "mid-i" in _tag_str(q) or "mid1" in _tag_str(q)]
     else:
