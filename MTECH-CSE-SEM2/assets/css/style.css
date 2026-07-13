@@ -855,8 +855,16 @@ ol.steps li { margin-bottom: 0.55rem; }
 .sec-visual { border-top: none; padding-top: 0; }
 .question-page .sec-visual + .answer-section { border-top: 1px dashed var(--border); }
 
-/* ---- Landing / Login ---- */
-.login-page {
+.login-topbar {
+  position: relative; z-index: 2;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+}
+.login-topbar .brand { color: #fff !important; font-size: 0.95rem; }
+.login-topbar .brand-text { color: rgba(255, 255, 255, 0.85); font-weight: 600; }
+
   min-height: 100dvh;
   min-height: 100svh;
   background: #0f172a;
