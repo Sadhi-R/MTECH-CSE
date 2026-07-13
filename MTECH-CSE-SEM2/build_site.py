@@ -45,36 +45,47 @@ def esc(s) -> str:
 
 
 def nav(subject_slug: str, active: str = "", depth: str = "../../", nested: str = "") -> str:
-    """nested: 'questions' or 'units' when inside those subfolders."""
+    """Two-tier nav: slim top bar + subject sub-navigation."""
     prefix = "../" if nested else ""
     hub = f"{prefix}index.html"
     units = "index.html" if nested == "units" else f"{prefix}units/index.html"
     questions = "index.html" if nested == "questions" else f"{prefix}questions/index.html"
-    items = [
-        (f"{depth}home.html", "Home", "home"),
-        (hub, SUBJECTS[subject_slug]["short"], "hub"),
-        (units, "Units", "units"),
+    info = SUBJECTS[subject_slug]
+    sub_items = [
+        (hub, "Overview", "hub"),
         (questions, "Questions", "questions"),
+        (units, "Units", "units"),
         (f"{prefix}mid1.html", "Mid-I", "mid1"),
         (f"{prefix}mid2.html", "Mid-II", "mid2"),
         (f"{prefix}semester.html", "Semester", "sem"),
         (f"{prefix}previous-questions.html", "Past Papers", "past"),
         (f"{prefix}expected-questions.html", "Expected", "exp"),
         (f"{prefix}revision.html", "Revision", "rev"),
-        (f"{depth}search/index.html", "Search", "search"),
     ]
-    links = []
-    for href, label, key in items:
+    sub_links = []
+    for href, label, key in sub_items:
         cls = ' class="active"' if key == active else ""
-        links.append(f'<li><a href="{href}"{cls}>{label}</a></li>')
+        sub_links.append(f'<a href="{href}"{cls}>{esc(label)}</a>')
     return f"""<div id="scroll-progress"></div>
-<nav class="navbar"><div class="nav-inner">
-<a class="brand" href="{depth}home.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
-<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
-<ul class="nav-links" id="nav-links">{''.join(links)}</ul>
-<a class="nav-search-btn" href="{depth}search/index.html">⌕ Search</a>
+<nav class="navbar navbar--subject" aria-label="Site navigation">
+<div class="nav-top">
+<div class="nav-inner">
+<a class="brand" href="{depth}home.html"><span class="brand-mark">M2</span><span class="brand-text">CSE Sem-2 Hub</span></a>
+<div class="nav-actions">
+<a class="nav-search-btn" href="{depth}search/index.html" aria-label="Search topics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span class="nav-btn-label">Search</span></a>
 <a href="#" class="nav-logout-btn" data-logout>Logout</a>
-</div></nav>"""
+<button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+</div>
+</div>
+</div>
+<div class="nav-subject-bar">
+<div class="nav-subject-inner">
+<a class="nav-subject-back" href="{depth}home.html#subjects" title="All subjects">← Subjects</a>
+<span class="nav-subject-name"><strong>{esc(info['short'])}</strong> · {esc(info['name'])}</span>
+<div class="nav-subject-links" id="nav-links">{''.join(sub_links)}</div>
+</div>
+</div>
+</nav>"""
 
 
 def shell(title: str, subject: str, active: str, body: str, depth: str = "../../", nested: str = "") -> str:
@@ -85,7 +96,7 @@ def shell(title: str, subject: str, active: str, body: str, depth: str = "../../
 <title>{esc(title)} | {esc(SUBJECTS[subject]['name'])}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="{depth}assets/css/style.css"/>
+<link rel="stylesheet" href="{depth}assets/css/style.css?v=3"/>
 </head><body>
 {nav(subject, active, depth, nested)}
 <main class="container">{body}</main>
@@ -443,7 +454,7 @@ def write_subject_hub(subject: str, questions: list) -> None:
 <a href="semester.html">Semester</a><a href="expected-questions.html">Expected</a>
 <a href="previous-questions.html">Past Papers</a><a href="revision.html">Revision</a>
 </div>
-<div class="stats" style="margin:1.5rem 0;position:static;">
+<div class="stats stats-inline">
 <div class="stat"><div class="num">{len(questions)}</div><div class="lbl">Questions</div></div>
 <div class="stat"><div class="num">5</div><div class="lbl">Units</div></div>
 <div class="stat"><div class="num">4</div><div class="lbl">Exam Modes</div></div>
