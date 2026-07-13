@@ -8,14 +8,14 @@
   <meta name="description" content="M.Tech CSE Semester 2 study portal — login to access questions and answers." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="assets/css/style.css?v=5" />
+  <link rel="stylesheet" href="assets/css/style.css?v=6" />
 </head>
 <body class="login-page">
   <header class="login-topbar">
     <a class="brand" href="index.html"><span class="brand-mark">M2</span><span class="brand-text">M.Tech CSE · Sem-2</span></a>
   </header>
   <div class="landing-wrap">
-    <section class="landing-hero reveal">
+    <section class="landing-hero">
       <div class="landing-brand">
         <span class="brand-mark brand-mark-lg">M2</span>
         <p class="landing-eyebrow">M.Tech Computer Science & Engineering</p>
@@ -50,7 +50,7 @@
       </div>
     </section>
 
-    <section class="landing-login reveal">
+    <section class="landing-login">
       <div class="login-card">
         <div class="login-card-header">
           <div class="login-card-icon" aria-hidden="true">
@@ -87,10 +87,5 @@
   </footer>
 
   <script src="assets/js/auth.js"></script>
-  <script>
-    document.querySelectorAll('.reveal').forEach((el, i) => {
-      setTimeout(() => el.classList.add('visible'), 80 + i * 120);
-    });
-  </script>
 </body>
 </html>

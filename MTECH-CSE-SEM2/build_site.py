@@ -96,7 +96,7 @@ def shell(title: str, subject: str, active: str, body: str, depth: str = "../../
 <title>{esc(title)} | {esc(SUBJECTS[subject]['name'])}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="{depth}assets/css/style.css?v=5"/>
+<link rel="stylesheet" href="{depth}assets/css/style.css?v=6"/>
 </head><body>
 {nav(subject, active, depth, nested)}
 <main class="container">{body}</main>
