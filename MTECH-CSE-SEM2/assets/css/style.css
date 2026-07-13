@@ -757,12 +757,24 @@ ol.steps li { margin-bottom: 0.55rem; }
   font-size: 0.92rem; font-weight: 500;
   backdrop-filter: blur(8px);
   transition: background var(--duration) var(--ease);
+  min-height: 48px;
 }
 .landing-features li:hover { background: rgba(255, 255, 255, 0.1); }
 .landing-features .feat-icon {
-  width: 32px; height: 32px; border-radius: 8px;
-  background: rgba(79, 70, 229, 0.3); display: grid; place-items: center;
-  flex-shrink: 0; color: #a5b4fc;
+  width: 32px; height: 32px; min-width: 32px; min-height: 32px;
+  border-radius: 8px;
+  background: rgba(79, 70, 229, 0.3); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; color: #a5b4fc; overflow: hidden;
+}
+.landing-features .feat-icon svg {
+  width: 18px; height: 18px; max-width: 18px; max-height: 18px;
+  display: block; flex-shrink: 0;
+}
+.landing-login {
+  width: 100%; max-width: 420px; justify-self: center;
+}
+@media (min-width: 901px) {
+  .landing-login { justify-self: end; }
 }
 .login-card {
   background: rgba(255, 255, 255, 0.95);
@@ -770,14 +782,20 @@ ol.steps li { margin-bottom: 0.55rem; }
   border-radius: var(--radius-lg); padding: 2.25rem;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 100%;
 }
 .login-card-header {
   display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.5rem;
 }
 .login-card-icon {
-  width: 44px; height: 44px; border-radius: 12px;
+  width: 44px; height: 44px; min-width: 44px; min-height: 44px;
+  border-radius: 12px;
   background: linear-gradient(135deg, var(--primary-soft), var(--accent-soft));
-  display: grid; place-items: center; color: var(--primary);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--primary); overflow: hidden; flex-shrink: 0;
+}
+.login-card-icon svg {
+  width: 22px; height: 22px; max-width: 22px; max-height: 22px; display: block;
 }
 .login-card h2 { font-size: 1.45rem; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
 .login-form label {
@@ -798,8 +816,12 @@ ol.steps li { margin-bottom: 0.55rem; }
 .password-toggle {
   position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
   background: none; border: none; cursor: pointer; color: var(--muted);
-  padding: 4px; display: grid; place-items: center;
+  padding: 4px; display: flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
   transition: color var(--duration) var(--ease);
+}
+.password-toggle svg {
+  width: 18px; height: 18px; max-width: 18px; max-height: 18px; display: block;
 }
 .password-toggle:hover { color: var(--primary); }
 .login-form .input-wrap input { padding-right: 2.75rem; }
@@ -815,5 +837,5 @@ ol.steps li { margin-bottom: 0.55rem; }
 }
 
 /* ---- Icon utility (inline SVG sizing) ---- */
-.icon-sm { width: 18px; height: 18px; flex-shrink: 0; }
-.icon-md { width: 22px; height: 22px; flex-shrink: 0; }
+svg.icon-sm, .icon-sm { width: 18px; height: 18px; max-width: 18px; max-height: 18px; flex-shrink: 0; display: block; }
+svg.icon-md, .icon-md { width: 22px; height: 22px; max-width: 22px; max-height: 22px; flex-shrink: 0; display: block; }
