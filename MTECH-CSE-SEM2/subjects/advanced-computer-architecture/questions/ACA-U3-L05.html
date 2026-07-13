@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Explain memory consistency models. | Advanced Computer Architecture</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">ACA</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">ACA</a> · <a href="index.html">Questions</a> · <span>Explain memory consistency models.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Explain memory consistency models.</h1><div class="badge-row"><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-3</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain memory consistency models.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>Memory consistency models</strong> define what values loads may return when multiple processors access shared memory concurrently.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><rect x="40" y="60" width="100" height="60" rx="8" fill="#ef4444" stroke="#0f172a" stroke-width="1.5"/><text x="90.0" y="95.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">CPU1 Cache
+M (Modified)</text><rect x="200" y="60" width="100" height="60" rx="8" fill="#94a3b8" stroke="#0f172a" stroke-width="1.5"/><text x="250.0" y="95.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">CPU2 Cache
+I (Invalid)</text><rect x="120" y="150" width="100" height="40" rx="8" fill="#6366f1" stroke="#0f172a" stroke-width="1.5"/><text x="170.0" y="175.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Main Memory</text><line x1="140" y1="90" x2="200" y2="90" stroke="#0d9488" stroke-width="2" marker-end="url(#arr)"/><text x="155" y="85" fill="#475569" font-size="10">invalidate</text><text x="40" y="30" fill="#0f172a" font-size="13" font-weight="700">Cache Coherence — MSI states</text><text x="40" y="220" fill="#64748b" font-size="11">CPU1 writes → CPU2 copy marked Invalid → same value everywhere</text></svg></div></section>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Models: sequential consistency (SC), relaxed (TSO, PSO), release consistency, and C++11 memory order.</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Correct model ensures parallel programs behave as intended without excess fences.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Hardware may reorder loads/stores; consistency model specifies allowed orderings and fence requirements.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Define sequential consistency (program order + interleaving).</li><li>Explain relaxed: TSO, weak ordering.</li><li>Release/acquire semantics for sync.</li><li>Fence instructions enforce ordering.</li><li>Compare performance vs ease of programming.</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">SC: all loads see same global order
+Relaxed: stores may buffer (TSO)</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">Program with locks/fences → model guarantees visibility</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Start -&gt; Define -&gt; Process -&gt; Validate -&gt; Conclude -&gt; End</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>Two cores: without fence, store may not be visible immediately (TSO); fence ensures publish.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Relaxed: higher performance</li><li>SC: easiest to reason</li><li>Fences target hot paths only</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Relaxed models hard to program</li><li>Subtle bugs without fences</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>Multicore CPUs</li><li>GPU memory model</li><li>Lock-free data structures</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Define SC first, then why relaxed models exist — standard exam flow.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Assuming all systems are sequentially consistent.</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">SC=strictest | TSO=store buffer | Weak=most relaxed</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>Fences add stall cycles</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>Store buffers, invalidate queues</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Difference SC vs TSO?</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Consistency = what order loads/stores visible</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>SC definition. Relaxed models. Fences. Example reorder.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>All major models, reorder examples, fence role, programming implications.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Memory consistency defines visible order of shared loads/stores; SC strictest, relaxed models faster.</div>
+<div class="topic-nav"><a href="ACA-U3-L04.html"><span class="label">← Previous</span>Explain arithmetic pipeline.</a><a class="next" href="ACA-U4-S01.html"><span class="label">Next →</span>Define cache coherence.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

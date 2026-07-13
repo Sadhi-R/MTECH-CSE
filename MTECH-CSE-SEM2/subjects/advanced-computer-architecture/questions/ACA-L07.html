@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Cache Coherence Protocols MSI/MESI | Advanced Computer Architecture</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">ACA</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">ACA</a> · <a href="index.html">Questions</a> · <span>Cache Coherence Protocols MSI/MESI</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Cache Coherence Protocols MSI/MESI</h1><div class="badge-row"><span class="badge badge-high">High Weightage</span><span class="badge badge-faq">Mid-II Q2</span><span class="badge badge-conf">95%</span><span class="badge badge-unit">Unit-3</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain cache coherence problem and MSI/MESI protocols.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong>Cache coherence ensures all cores observe consistent memory values.</div>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Private caches can hold stale shared data without coherence.</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Critical for multicore correctness.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Protocol tracks line states and bus transactions to maintain consistency.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Define coherence issue</li><li>Explain MSI states</li><li>Add MESI optimization</li><li>Give transition example</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">State diagram with Modified, Shared, Invalid, Exclusive.</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">State transition algorithm triggered by read/write snoop events.</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Core read/write -&gt; bus action -&gt; state transition -&gt; data served.</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>Two bank clerks editing same account balance must sync updates.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Correct shared-memory behavior</li><li>MESI reduces unnecessary write-backs</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Bus traffic overhead</li><li>State machine complexity</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>Multicore CPUs</li><li>Server processors</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Mention write-invalidate approach explicitly.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Confusing coherence with memory consistency model.</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">MESI adds Exclusive state over MSI for silent upgrades.</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>Per access overhead depends on coherence event.</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>Per cache line state bits plus directory/snoop metadata.</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Classic interview topic for system roles.</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Coherence keeps all cores on same page.</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Draw state diagram and transitions.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Explain invalidation, snooping, and MESI benefit in depth.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>MSI/MESI maintain correct shared data across cores.</div>
+<div class="topic-nav"><a href="ACA-L06.html"><span class="label">← Previous</span>Cache Mapping Techniques</a><a class="next" href="ACA-L08.html"><span class="label">Next →</span>SIMD and Vector Processors</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

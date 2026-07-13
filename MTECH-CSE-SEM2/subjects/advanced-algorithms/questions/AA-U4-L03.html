@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Explain polynomial multiplication and division. | Advanced Algorithms</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">AA</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">AA</a> · <a href="index.html">Questions</a> · <span>Explain polynomial multiplication and division.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Explain polynomial multiplication and division.</h1><div class="badge-row"><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-4</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain polynomial multiplication and division.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>Polynomial multiplication</strong> convolves coefficients; <strong>division</strong> gives quotient and remainder like integer division.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><rect x="30" y="90" width="90" height="40" rx="8" fill="#94a3b8" stroke="#0f172a" stroke-width="1.5"/><text x="75.0" y="115.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Coeffs
+O(n²)</text><line x1="120" y1="110" x2="150" y2="110" stroke="#0d9488" stroke-width="2" marker-end="url(#arr)"/><rect x="155" y="90" width="90" height="40" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="200.0" y="115.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">DFT/FFT
+O(n log n)</text><line x1="245" y1="110" x2="275" y2="110" stroke="#0d9488" stroke-width="2" marker-end="url(#arr)"/><rect x="280" y="90" width="90" height="40" rx="8" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/><text x="325.0" y="115.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Pointwise
+×</text><text x="30" y="40" fill="#0f172a" font-size="13" font-weight="700">FFT — Fast polynomial multiply</text><text x="30" y="170" fill="#64748b" font-size="11">Evaluate → multiply points → inverse FFT</text></svg></div></section>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Naive multiply O(n²); FFT reduces to O(n log n).</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Needed in signal processing, cryptography, and fast arithmetic.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Schoolbook multiply: each coeff of A multiplies all of B. Division: long division on coefficients.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Represent polynomials as coefficient arrays.</li><li>Multiply: c[k]=Σ a[i]b[k-i] for all i.</li><li>Divide A by B: find q,r such that A=Bq+r, deg(r)<deg(B).</li><li>FFT multiply: evaluate at roots, pointwise multiply, inverse FFT.</li><li>State complexities.</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">A(x)=1+2x, B(x)=3+x → C(x)=3+7x+2x²</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">Naive: O(n²)
+FFT: evaluate → multiply points → interpolate</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Start -&gt; Define -&gt; Process -&gt; Validate -&gt; Conclude -&gt; End</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>Multiply two large numbers (Schönhage-Strassen uses FFT-based polynomial multiply).</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>FFT near-linear multiply</li><li>Exact with integer coefficients</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Naive slow for large degree</li><li>FFT needs careful rounding for floats</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>Signal convolution</li><li>Big integer multiply</li><li>Error-correcting codes</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Show small coefficient multiply by hand.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Confusing polynomial mod with polynomial divide.</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">Naive O(n²) | FFT O(n log n)</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>Naive O(n²); FFT O(n log n)</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>O(n) coefficients</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Why FFT helps polynomial multiply?</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Poly multiply = convolution of coefficients</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Coefficient multiply. Division algorithm. FFT mention.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Naive and FFT methods, division, example, complexity.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Polynomial multiply convolves coefficients; FFT achieves O(n log n).</div>
+<div class="topic-nav"><a href="AA-U4-L02.html"><span class="label">← Previous</span>Explain CRT and polynomial interpolation (parts a and b).</a><a class="next" href="AA-U4-L04.html"><span class="label">Next →</span>Compare FFT and direct polynomial product.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

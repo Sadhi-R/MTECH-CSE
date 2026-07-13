@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Explain Dijkstra algorithm with steps and example. | Advanced Algorithms</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">AA</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">AA</a> · <a href="index.html">Questions</a> · <span>Explain Dijkstra algorithm with steps and example.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Explain Dijkstra algorithm with steps and example.</h1><div class="badge-row"><span class="badge badge-high">High Weightage</span><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-1</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain Dijkstra algorithm with steps and example.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>Dijkstra's algorithm</strong> finds single-source shortest paths in graphs with <strong>non-negative</strong> edge weights using a greedy Min-Heap.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg" viewBox="0 0 420 230" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><circle cx="70" cy="120" r="22" fill="#0d9488" stroke="#0f172a" stroke-width="2"/><text x="70" y="125" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">A</text><circle cx="190" cy="70" r="22" fill="#38bdf8" stroke="#0f172a" stroke-width="2"/><text x="190" y="75" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">B</text><circle cx="190" cy="170" r="22" fill="#38bdf8" stroke="#0f172a" stroke-width="2"/><text x="190" y="175" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">C</text><circle cx="310" cy="120" r="22" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/><text x="310" y="125" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">D</text><line x1="92" y1="120" x2="168" y2="70" stroke="#64748b" stroke-width="2"/><text x="130.0" y="89.0" text-anchor="middle" fill="#475569" font-size="11">4</text><line x1="92" y1="120" x2="168" y2="170" stroke="#64748b" stroke-width="2"/><text x="130.0" y="139.0" text-anchor="middle" fill="#475569" font-size="11">2</text><line x1="212" y1="70" x2="288" y2="120" stroke="#64748b" stroke-width="2"/><text x="250.0" y="89.0" text-anchor="middle" fill="#475569" font-size="11">1</text><line x1="212" y1="170" x2="288" y2="120" stroke="#64748b" stroke-width="2"/><text x="250.0" y="139.0" text-anchor="middle" fill="#475569" font-size="11">3</text><text x="60" y="30" fill="#0f172a" font-size="13" font-weight="700">Dijkstra — Min-Heap (non-negative weights)</text><text x="60" y="210" fill="#64748b" font-size="11">A→C→D = 2+3 = 5 (cheapest path highlighted)</text><path d="M70,120 L190,170 L310,120" fill="none" stroke="#ef4444" stroke-width="3"/></svg></div></section>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Standard algorithm for weighted shortest path (GPS, routing).</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>BFS fails when edges have different costs.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Always settle the unvisited node with minimum tentative distance; relax its neighbors.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>dist[source]=0, others=∞.</li><li>Insert (0,source) in min-heap.</li><li>Extract min (d,u); skip if stale.</li><li>For each edge (u,v,w): if dist[u]+w < dist[v], update and insert.</li><li>Repeat until heap empty.</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">A--4--B
+|     |
+2     1
+|     |
+C--3--D
+From A: D=5 via C</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">Priority queue + relaxation: dist[v]=min(dist[v], dist[u]+w)</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Init → extract min → relax neighbors → repeat</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>Food delivery: find fastest route when roads have different travel times.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Efficient with heap</li><li>Greedy and intuitive</li><li>Works on sparse graphs</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>No negative weights</li><li>Heap operations add log factor</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>Google Maps routing</li><li>Network routing</li><li>Game AI pathfinding</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>State heap as data structure. Fill-in: single-source shortest path.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Using with negative edges</li><li>not marking stale heap entries.</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">Dijkstra=non-negative+heap | Bellman-Ford=handles negatives, slower</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>O((V+E) log V) with binary heap</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>O(V)</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Why greedy works? When Bellman-Ford instead?</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Dijkstra = Distance + Heap, No Negatives</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Define, greedy idea, algorithm steps, small example, complexity.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Full algorithm, dry-run on 4-node graph, proof sketch, limitations, applications.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Dijkstra = greedy + min-heap → single-source shortest path, no negative weights.</div>
+<div class="topic-nav"><a href="AA-U1-L03.html"><span class="label">← Previous</span>Explain DAG and topological sorting.</a><a class="next" href="AA-U1-L05.html"><span class="label">Next →</span>Compare MST algorithms (Kruskal vs Prim).</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

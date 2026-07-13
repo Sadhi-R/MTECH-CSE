@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Explain bucket and enumeration sort. | Parallel Computing</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">PC</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">PC</a> · <a href="index.html">Questions</a> · <span>Explain bucket and enumeration sort.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Explain bucket and enumeration sort.</h1><div class="badge-row"><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-4</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain bucket and enumeration sort.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>Bucket sort</strong> distributes elements into buckets by key range; <strong>enumeration sort</strong> counts occurrences to determine positions.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg" viewBox="0 0 420 240" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><rect x="40" y="56" width="40" height="64" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="60.0" y="93.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">8</text><rect x="95" y="96" width="40" height="24" rx="8" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/><text x="115.0" y="113.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">3</text><rect x="150" y="80" width="40" height="40" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="170.0" y="105.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">5</text><rect x="205" y="112" width="40" height="8" rx="8" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/><text x="225.0" y="121.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">1</text><rect x="260" y="48" width="40" height="72" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="280.0" y="89.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">9</text><rect x="315" y="104" width="40" height="16" rx="8" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/><text x="335.0" y="117.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">2</text><text x="40" y="40" fill="#0f172a" font-size="13" font-weight="700">Sorting — Arrange elements in order</text><text x="40" y="210" fill="#64748b" font-size="11">Before: [8,3,5,1,9,2] → After: [1,2,3,5,8,9]</text><rect x="40" y="162" width="40" height="8" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="60.0" y="171.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">1</text><rect x="95" y="154" width="40" height="16" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="115.0" y="167.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">2</text><rect x="150" y="146" width="40" height="24" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="170.0" y="163.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">3</text><rect x="205" y="130" width="40" height="40" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="225.0" y="155.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">5</text><rect x="260" y="106" width="40" height="64" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="280.0" y="143.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">8</text><rect x="315" y="98" width="40" height="72" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="335.0" y="139.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">9</text></svg></div></section>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Both are parallel-friendly when key range is manageable.</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Achieve O(n) or O(n+p) parallel time under assumptions on key distribution.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Bucket: hash/range map to buckets, sort buckets locally. Enumeration: count keys, prefix-sum for positions.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Bucket: divide range into p buckets.</li><li>Each PE sorts local bucket.</li><li>Concatenate buckets (in-order).</li><li>Enumeration: count each key value.</li><li>Prefix-sum counts → write to final position.</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">Keys→[B0][B1][B2]→local sort→merge in order</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">Bucket: distribute → local sort → gather
+Enumeration: count → prefix sum → scatter</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Start -&gt; Define -&gt; Process -&gt; Validate -&gt; Conclude -&gt; End</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>Sort 1M integers 0-999: 1000 buckets, each PE sorts ~1000 elements.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Bucket: good uniform distribution</li><li>Enumeration: O(n) for small key range</li><li>Highly parallel local sorts</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Bucket: bad if skewed distribution</li><li>Enumeration: range must be small</li><li>Extra memory for buckets</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>Radix sort building block</li><li>Parallel integer sort</li><li>GPU sorting</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Contrast bucket (range split) vs enumeration (counting) — comparison question.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Bucket sort when range is huge and sparse.</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">Bucket=range bins | Enumeration=count keys</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>O(n/p) local sort + O(p) merge (bucket)</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>Bucket arrays + count arrays</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Bucket vs radix sort?</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Bucket + enumeration = distribute/count then sort</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Both algorithms. Steps. Parallel phases. When applicable.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Bucket sort (range bins) and enumeration sort (count + prefix sum) for parallel integer sort.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Bucket sort partitions by range; enumeration sort uses counting and prefix-sum for positions.</div>
+<div class="topic-nav"><a href="PC-U4-L03.html"><span class="label">← Previous</span>Explain parallel bubble and quick sort.</a><a class="next" href="PC-U4-L05.html"><span class="label">Next →</span>Explain radix sort.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

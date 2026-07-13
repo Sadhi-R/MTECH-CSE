@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Explain bot creation methods. | Robotic Process Automation</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">RPA</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">RPA</a> · <a href="index.html">Questions</a> · <span>Explain bot creation methods.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Explain bot creation methods.</h1><div class="badge-row"><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-1</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain bot creation methods.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>Bot creation methods</strong> in Automation Anywhere include Smart Recorder, Screen Recorder, Web Recorder, and manual Task Editor commands.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg" viewBox="0 0 440 220" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><rect x="30" y="80" width="90" height="50" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="75.0" y="110.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Bot
+Creator</text><rect x="160" y="70" width="110" height="70" rx="8" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/><text x="215.0" y="110.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Control
+Room</text><rect x="310" y="80" width="90" height="50" rx="8" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/><text x="355.0" y="110.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Bot
+Runner</text><line x1="120" y1="105" x2="160" y2="105" stroke="#0d9488" stroke-width="2" marker-end="url(#arr)"/><line x1="270" y1="105" x2="310" y2="105" stroke="#0d9488" stroke-width="2" marker-end="url(#arr)"/><rect x="160" y="170" width="110" height="35" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="215.0" y="192.5" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Target Apps (SAP/Excel/Web)</text><line x1="215" y1="140" x2="215" y2="170" stroke="#0d9488" stroke-width="2" marker-end="url(#arr)"/><text x="30" y="40" fill="#0f172a" font-size="13" font-weight="700">RPA Architecture — Build → Manage → Execute</text></svg></div></section>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Recorders capture user actions; Task Editor allows fine-grained command building.</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Method choice depends on app type (web, desktop, Citrix) and maintainability needs.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Recorder generates commands from captured clicks/keystrokes; developer edits, parameterizes, adds logic.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Smart Recorder: object-cloning aware desktop apps.</li><li>Screen Recorder: coordinate/image based.</li><li>Web Recorder: HTML/DOM elements.</li><li>Manual: drag-drop commands in Task Editor.</li><li>Test, parameterize, publish to Control Room.</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">Record actions → Edit commands → Add variables/logic → Save task</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">Select recorder type → capture → refine in Task Editor → deploy</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Start -&gt; Define -&gt; Process -&gt; Validate -&gt; Conclude -&gt; End</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>Web login: Web Recorder captures username/password fields; variables replace hardcoded values.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Recorders speed development</li><li>Smart Recorder more resilient</li><li>Manual gives full control</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Screen Recorder fragile to resolution change</li><li>Over-recording creates redundant steps</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>Desktop ERP automation</li><li>Web portal data entry</li><li>Citrix automation</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Compare three recorders in a table — common exam question.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Screen Recorder on apps with dynamic layout (use Smart/Web).</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">Smart=object | Screen=coordinates | Web=DOM</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>Recorder: minutes; manual: hours for complex flows</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>Task XML + object repository</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Which recorder for SAP vs website?</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Bot creation = Smart/Screen/Web recorder or manual</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Three recorders. Manual editor. Steps. When to use each.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Bot creation via Smart/Screen/Web recorders or manual Task Editor commands.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Bot creation: Smart/Screen/Web recorders capture actions; Task Editor builds commands manually.</div>
+<div class="topic-nav"><a href="RPA-U1-L02.html"><span class="label">← Previous</span>Explain Automation Anywhere advanced features.</a><a class="next" href="RPA-U1-L04.html"><span class="label">Next →</span>Explain benefits and limitations of RPA.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Maximum Flow and Min-Cut Theorem | Advanced Algorithms</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">AA</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">AA</a> · <a href="index.html">Questions</a> · <span>Maximum Flow and Min-Cut Theorem</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Maximum Flow and Min-Cut Theorem</h1><div class="badge-row"><span class="badge badge-high">High Weightage</span><span class="badge badge-faq">Mid-II Q1</span><span class="badge badge-conf">95%</span><span class="badge badge-unit">Unit-3</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain Ford-Fulkerson method and max-flow min-cut theorem.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong>Maximum flow is the greatest transferable quantity from source to sink in a capacitated network.</div>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Residual graph enables repeated flow augmentation.</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Models resource movement such as traffic, data, or water.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Find augmenting path, push bottleneck flow, update residual capacities.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Build residual graph</li><li>Find s-t path</li><li>Augment</li><li>Repeat until none</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">Flow network with residual forward and backward edges.</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">Ford-Fulkerson / Edmonds-Karp variation.</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Start -&gt; residual path exists? yes augment : no stop.</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>Restaurant kitchen orders as flow from order desk to serving counter.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Strong modeling power</li><li>Theorem gives optimality certificate</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Path choice affects speed</li><li>Irrational capacities issue in basic FF</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>Bipartite matching</li><li>Image segmentation</li><li>Bandwidth planning</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Write theorem statement: max-flow value equals min-cut capacity.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Not updating reverse edges in residual graph.</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">Edmonds-Karp uses BFS for polynomial bound.</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>FF depends on augmenting paths; EK O(VE^2).</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>O(V+E) for graph storage.</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Often asked with one small network computation.</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Flow grows until no extra path remains.</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Define residual and bottleneck.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Include theorem proof intuition and one computed example.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>No augmenting path means flow is maximum.</div>
+<div class="topic-nav"><a href="AALG-L03.html"><span class="label">← Previous</span>Single Source Shortest Path: Dijkstra</a><a class="next" href="AALG-L05.html"><span class="label">Next →</span>Bipartite Matching via Flow</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

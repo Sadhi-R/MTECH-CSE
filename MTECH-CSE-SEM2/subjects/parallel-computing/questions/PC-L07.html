@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Parallel BFS and DFS | Parallel Computing</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">PC</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">PC</a> · <a href="index.html">Questions</a> · <span>Parallel BFS and DFS</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Parallel BFS and DFS</h1><div class="badge-row"><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">87%</span><span class="badge badge-unit">Unit-4</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain strategies for parallel BFS and DFS on large graphs.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong>Parallel BFS expands frontier level by level; parallel DFS is harder due to deep dependency.</div>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Graph traversal is key for many analytics workloads.</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Parallelization reduces exploration time on large sparse graphs.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Distribute vertices/edges and synchronize frontier updates.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>BFS frontier model</li><li>Load balancing</li><li>DFS work stealing</li><li>Synchronization</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">Level frontier queues across processors.</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">For BFS use level-synchronous expansion; for DFS use task stealing.</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Initialize frontier -&gt; expand neighbors -&gt; build next frontier -&gt; repeat.</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>City-wide friend recommendation graph traversal.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Huge speedup on large graphs</li><li>Memory locality benefits with partitioning</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>High communication at frontier boundaries</li><li>DFS irregularity</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>Social networks</li><li>Web crawling</li><li>Route analysis</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Mention visited bitmap and duplicate elimination.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Allowing multiple processors to re-add same vertex without checks.</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">BFS parallelization is generally easier than DFS.</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>Depends on edges processed and synchronization rounds.</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>Visited arrays, frontier queues, partition metadata.</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Asked in graph systems interviews.</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>BFS grows by layers; DFS needs smarter task splitting.</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Describe level-synchronous BFS and parallel DFS idea.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Explain challenges: contention, load balance, and duplicates.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Graph traversal parallelism depends on frontier management.</div>
+<div class="topic-nav"><a href="PC-L06.html"><span class="label">← Previous</span>Parallel Sorting Approaches</a><a class="next" href="PC-L08.html"><span class="label">Next →</span>Parallel Dijkstra and Prim</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

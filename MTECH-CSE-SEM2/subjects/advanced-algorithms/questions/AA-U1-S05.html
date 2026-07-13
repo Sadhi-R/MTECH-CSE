@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>What is the time complexity of DFS? | Advanced Algorithms</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">AA</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">AA</a> · <a href="index.html">Questions</a> · <span>What is the time complexity of DFS?</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>What is the time complexity of DFS?</h1><div class="badge-row"><span class="badge badge-high">High Weightage</span><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-1</span><span class="badge badge-exam">Short</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">What is the time complexity of DFS?</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>DFS</strong> (Depth-First Search) visits every vertex and explores every edge once using a <span class='kw'>Stack</span> or recursion.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg visual-compact" viewBox="0 0 420 230" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><circle cx="80" cy="120" r="22" fill="#0d9488" stroke="#0f172a" stroke-width="2"/><text x="80" y="125" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">A</text><circle cx="180" cy="70" r="22" fill="#38bdf8" stroke="#0f172a" stroke-width="2"/><text x="180" y="75" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">B</text><circle cx="280" cy="70" r="22" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/><text x="280" y="75" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">D</text><circle cx="180" cy="170" r="22" fill="#a78bfa" stroke="#0f172a" stroke-width="2"/><text x="180" y="175" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">C</text><line x1="102" y1="120" x2="158" y2="70" stroke="#64748b" stroke-width="2"/><line x1="202" y1="70" x2="258" y2="70" stroke="#64748b" stroke-width="2"/><line x1="102" y1="120" x2="158" y2="170" stroke="#64748b" stroke-width="2"/><path d="M80,120 L180,70 L280,70" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8,4"/><text x="80" y="30" fill="#0f172a" font-size="13" font-weight="700">DFS — Go Deep First (Stack)</text><text x="80" y="210" fill="#64748b" font-size="11">Path A→B→D (red dashed) before backtracking to C</text></svg></div></section>
+<section class="answer-section"><h3>Key Points</h3><ul class="clean"><li>Each vertex visited once → O(V).</li><li>Each edge examined once → O(E).</li><li>Total time = <strong>O(V + E)</strong>. Space O(V) for stack/visited.</li></ul></section>
+<section class="answer-section"><h3>Real-Time Example</h3><p>Maze solving — go deep into one path before backtracking.</p></section>
+<div class="callout callout-exam"><strong class="label">Exam Keyword</strong> <span class="kw-exam">O(V+E) · Stack/Recursion · Backtracking</span></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>DFS time = O(V+E) — visit each vertex and edge exactly once.</div>
+<div class="topic-nav"><a href="AA-U1-S04.html"><span class="label">← Previous</span>Differentiate amortized analysis and worst-case analysis.</a><a class="next" href="AA-U1-L01.html"><span class="label">Next →</span>Compare five sorting algorithms.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

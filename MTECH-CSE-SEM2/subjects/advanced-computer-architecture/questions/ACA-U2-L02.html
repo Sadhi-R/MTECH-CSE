@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Explain memory hierarchy and performance impact. | Advanced Computer Architecture</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">ACA</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">ACA</a> · <a href="index.html">Questions</a> · <span>Explain memory hierarchy and performance impact.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Explain memory hierarchy and performance impact.</h1><div class="badge-row"><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-2</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain memory hierarchy and performance impact.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>Memory hierarchy</strong> layers storage from fast/small (registers) to slow/large (disk).</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><text x="160" y="30" fill="#0f172a" font-size="13" font-weight="700" text-anchor="middle">Memory Hierarchy Pyramid</text><rect x="230.0" y="50" width="60" height="32" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="260.0" y="71.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Registers</text><text x="400" y="66" fill="#64748b" font-size="10">Fastest</text><rect x="210.0" y="88" width="100" height="32" rx="8" fill="#14b8a6" stroke="#0f172a" stroke-width="1.5"/><text x="260.0" y="109.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">L1 Cache</text><text x="400" y="104" fill="#64748b" font-size="10">↓</text><rect x="190.0" y="126" width="140" height="32" rx="8" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/><text x="260.0" y="147.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">L2/L3</text><text x="400" y="142" fill="#64748b" font-size="10">↓</text><rect x="170.0" y="164" width="180" height="32" rx="8" fill="#6366f1" stroke="#0f172a" stroke-width="1.5"/><text x="260.0" y="185.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">RAM</text><text x="400" y="180" fill="#64748b" font-size="10">↓</text><rect x="150.0" y="202" width="220" height="32" rx="8" fill="#94a3b8" stroke="#0f172a" stroke-width="1.5"/><text x="260.0" y="223.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Disk</text><text x="400" y="218" fill="#64748b" font-size="10">Slowest</text></svg></div></section>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Bridges speed-cost gap in computer design.</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Fast memory is expensive; hierarchy gives speed of cache with capacity of disk.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Check registers → L1 → L2 → L3 → RAM → disk on each access.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Draw pyramid.</li><li>State size/speed at each level.</li><li>Explain temporal and spatial locality.</li><li>Explain cache hit vs miss impact.</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">Registers → L1 → L2 → L3 → RAM → Disk (fast to slow)</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">On access: search hierarchy top-down until hit.</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Access → L1 hit? → L2? → ... → RAM → Disk</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>Mobile game: hot data in cache = smooth FPS; misses = stutter.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Average access near cache speed</li><li>Cost effective</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Cache misses cause stalls</li><li>Complex coherence in multiprocessors</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>CPU design</li><li>Database buffer pools</li><li>OS paging</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Draw pyramid diagram — frequently asked.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Saying more RAM always equals faster (locality matters).</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">Register fastest/smallest · Disk slowest/largest</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>Hit: few cycles; Miss: 100+ cycles to RAM</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>Hierarchy spans bytes to terabytes</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Temporal vs spatial locality?</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Fast/Small at top, Slow/Big at bottom</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Pyramid diagram + locality + performance impact.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Full hierarchy, hit/miss, locality types, example, multiprocessor note.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Hierarchy = Registers→Cache→RAM→Disk; locality makes it fast.</div>
+<div class="topic-nav"><a href="ACA-U2-L01.html"><span class="label">← Previous</span>Explain Amdahl and Gustafson laws with examples.</a><a class="next" href="ACA-U2-L03.html"><span class="label">Next →</span>Explain scalable performance in parallel systems.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Explain multiprocessor interconnects in detail. | Advanced Computer Architecture</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">ACA</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">ACA</a> · <a href="index.html">Questions</a> · <span>Explain multiprocessor interconnects in detail.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Explain multiprocessor interconnects in detail.</h1><div class="badge-row"><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-4</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain multiprocessor interconnects in detail.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>Multiprocessor interconnects</strong> connect CPUs to shared memory or each other — bus, crossbar, mesh, and directory-based schemes.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg" viewBox="0 0 440 210" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><rect x="30" y="70" width="70" height="50" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="65.0" y="100.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">P0</text><rect x="130" y="70" width="70" height="50" rx="8" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/><text x="165.0" y="100.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">P1</text><rect x="230" y="70" width="70" height="50" rx="8" fill="#6366f1" stroke="#0f172a" stroke-width="1.5"/><text x="265.0" y="100.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">P2</text><rect x="330" y="70" width="70" height="50" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="365.0" y="100.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">P3</text><line x1="100" y1="95" x2="130" y2="95" stroke="#0d9488" stroke-width="2" marker-end="url(#arr)"/><line x1="200" y1="95" x2="230" y2="95" stroke="#0d9488" stroke-width="2" marker-end="url(#arr)"/><line x1="300" y1="95" x2="330" y2="95" stroke="#0d9488" stroke-width="2" marker-end="url(#arr)"/><text x="30" y="40" fill="#0f172a" font-size="13" font-weight="700">MPI — Message Passing (distributed memory)</text><text x="30" y="160" fill="#64748b" font-size="11">Each process has private memory; Send/Recv/Bcast move data</text><rect x="130" y="150" width="120" height="35" rx="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.5"/><text x="190.0" y="172.5" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Shared Network</text></svg></div></section>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Shared-memory multiprocessors rely on cache-coherent interconnects (snooping or directory).</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Interconnect bandwidth and latency bound multiprocessor scalability.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>CPUs issue memory requests; interconnect routes to memory or other caches; coherence protocol maintains consistency.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Bus-based SMP: all snoop shared bus.</li><li>Crossbar: dedicated paths, higher bandwidth.</li><li>Mesh/NUMA: local vs remote memory access.</li><li>Directory protocol for scalable coherence.</li><li>Compare latency, bandwidth, scalability.</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">SMP bus: CPU0 CPU1 CPU2 — all on shared bus
+NUMA: each CPU has local memory + remote link</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">Request → interconnect route → coherence (snoop/dir) → response</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Start -&gt; Define -&gt; Process -&gt; Validate -&gt; Conclude -&gt; End</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>4-socket server: crossbar connects sockets; remote NUMA access ~2× local latency.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Bus: simple cheap</li><li>Crossbar: low contention</li><li>Directory: scales to many nodes</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Bus saturates quickly</li><li>NUMA needs awareness in software</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>SMP servers</li><li>NUMA workstations</li><li>Manycore chips</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Draw bus SMP vs NUMA diagram with local/remote memory.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Ignoring NUMA penalty in performance analysis.</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">Bus=snoop all | Directory=point-to-point scalable</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>Local mem ~100ns; remote 1.5–3× higher</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>Cache directories, snoop filters</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Snooping vs directory coherence?</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>MP interconnect = bus, crossbar, NUMA mesh</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Types. Coherence link. NUMA. Diagram. Scalability.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Bus/crossbar/NUMA interconnects with coherence and scalability analysis.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Multiprocessor interconnects link CPUs via bus, crossbar, or NUMA mesh with cache coherence.</div>
+<div class="topic-nav"><a href="ACA-U4-L01.html"><span class="label">← Previous</span>Explain cache coherence protocols.</a><a class="next" href="ACA-U4-L03.html"><span class="label">Next →</span>Explain synchronization in shared memory systems.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

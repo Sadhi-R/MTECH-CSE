@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Search | CSE Sem-2 Study Hub</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+      <button class="nav-toggle" id="nav-toggle">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#subjects">Subjects</a></li>
+        <li><a href="index.html" class="active">Search</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" style="max-width:900px;padding-top:2rem;">
+    <nav class="breadcrumb"><a href="../index.html">Home</a> · <span>Search</span></nav>
+    <h1>Search 100+ questions & topics</h1>
+    <p class="text-muted mb-2">Search across all four subjects. Filter by subject or question type.</p>
+
+    <div class="search-box">
+      <input type="search" id="q" placeholder="Dijkstra, Amdahl, MPI, Control Room, pipeline…" autofocus />
+      <button type="button" id="go">Search</button>
+    </div>
+
+    <div class="filter-bar">
+      <label>Subject <select id="f-subject"><option value="">All</option>
+        <option>Advanced Algorithms</option>
+        <option>Advanced Computer Architecture</option>
+        <option>Parallel Computing</option>
+        <option>Robotic Process Automation</option>
+      </select></label>
+      <label>Type <select id="f-type"><option value="">All</option><option>long</option><option>short</option></select></label>
+      <button type="button" class="chip" id="f-high">High weightage only</button>
+    </div>
+
+    <div class="chip-row mb-2">
+      <button type="button" class="chip quick" data-q="BFS">BFS</button>
+      <button type="button" class="chip quick" data-q="Amdahl">Amdahl</button>
+      <button type="button" class="chip quick" data-q="MPI">MPI</button>
+      <button type="button" class="chip quick" data-q="Floyd">Floyd</button>
+      <button type="button" class="chip quick" data-q="Control Room">Control Room</button>
+      <button type="button" class="chip quick" data-q="pipeline">Pipeline</button>
+      <button type="button" class="chip quick" data-q="NP">NP-complete</button>
+    </div>
+
+    <div id="results" class="search-results"></div>
+  </main>
+
+  <button id="back-top">↑</button>
+  <script src="../assets/js/search-data.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    const input = document.getElementById('q');
+    const results = document.getElementById('results');
+    const fSub = document.getElementById('f-subject');
+    const fType = document.getElementById('f-type');
+    let highOnly = false;
+    document.getElementById('f-high').addEventListener('click', () => {
+      highOnly = !highOnly;
+      document.getElementById('f-high').classList.toggle('active', highOnly);
+      doSearch();
+    });
+    function getFilters() {
+      const f = {};
+      if (fSub.value) f.subject = fSub.value;
+      if (fType.value) f.type = fType.value;
+      return f;
+    }
+    function doSearch() {
+      let list = runSearch(input.value, getFilters());
+      if (highOnly) list = list.filter(r => r.weight === 'high');
+      if (!input.value || input.value.length < 2) {
+        results.innerHTML = '<p class="text-muted">Type at least 2 characters.</p>';
+        return;
+      }
+      if (!list.length) {
+        results.innerHTML = '<p class="text-muted">No results.</p>';
+        return;
+      }
+      results.innerHTML = list.slice(0, 60).map(r => `
+        <article class="search-hit">
+          <a href="${r.path}">${highlight(r.title, input.value)}</a>
+          <div class="path">${r.subject} · ${r.unit} · ${r.type || ''} ${r.weight==='high'?'<span class="badge badge-high">High</span>':''}</div>
+          <div class="snippet">${highlight(r.snippet, input.value)}</div>
+        </article>`).join('');
+    }
+    document.getElementById('go').addEventListener('click', doSearch);
+    input.addEventListener('input', doSearch);
+    fSub.addEventListener('change', doSearch);
+    fType.addEventListener('change', doSearch);
+    document.querySelectorAll('.chip.quick').forEach(c => c.addEventListener('click', () => { input.value = c.dataset.q; doSearch(); }));
+    const params = new URLSearchParams(location.search);
+    if (params.get('q')) { input.value = params.get('q'); doSearch(); }
+    else results.innerHTML = '<p class="text-muted">100 questions indexed. Start typing…</p>';
+  </script>
+</body>
+</html>

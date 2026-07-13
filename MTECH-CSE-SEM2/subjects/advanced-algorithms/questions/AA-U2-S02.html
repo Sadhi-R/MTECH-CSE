@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Define matroids and explain greedy connection. | Advanced Algorithms</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">AA</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">AA</a> · <a href="index.html">Questions</a> · <span>Define matroids and explain greedy connection.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Define matroids and explain greedy connection.</h1><div class="badge-row"><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-2</span><span class="badge badge-exam">Short</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Define matroids and explain greedy connection.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong>A <strong>matroid</strong> is a set system where the <span class='kw'>greedy algorithm</span> always finds the optimal independent set.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg visual-compact" viewBox="0 0 420 240" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><circle cx="100" cy="80" r="22" fill="#0d9488" stroke="#0f172a" stroke-width="2"/><text x="100" y="85" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">A</text><circle cx="260" cy="80" r="22" fill="#0d9488" stroke="#0f172a" stroke-width="2"/><text x="260" y="85" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">B</text><circle cx="100" cy="180" r="22" fill="#0d9488" stroke="#0f172a" stroke-width="2"/><text x="100" y="185" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">C</text><circle cx="260" cy="180" r="22" fill="#0d9488" stroke="#0f172a" stroke-width="2"/><text x="260" y="185" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">D</text><line x1="122" y1="80" x2="238" y2="80" stroke="#64748b" stroke-width="2" stroke-dasharray="6,4"/><text x="180.0" y="74.0" text-anchor="middle" fill="#475569" font-size="11">4</text><line x1="100" y1="102" x2="100" y2="158" stroke="#64748b" stroke-width="2"/><text x="100.0" y="124.0" text-anchor="middle" fill="#475569" font-size="11">2</text><line x1="122" y1="180" x2="238" y2="180" stroke="#64748b" stroke-width="2"/><text x="180.0" y="174.0" text-anchor="middle" fill="#475569" font-size="11">3</text><line x1="122" y1="102" x2="238" y2="158" stroke="#64748b" stroke-width="2"/><text x="180.0" y="124.0" text-anchor="middle" fill="#475569" font-size="11">1</text><line x1="260" y1="102" x2="260" y2="158" stroke="#64748b" stroke-width="2" stroke-dasharray="6,4"/><text x="260.0" y="124.0" text-anchor="middle" fill="#475569" font-size="11">5</text><line x1="122" y1="102" x2="238" y2="158" stroke="#ef4444" stroke-width="4"/><line x1="100" y1="102" x2="100" y2="158" stroke="#ef4444" stroke-width="4"/><line x1="122" y1="180" x2="238" y2="180" stroke="#ef4444" stroke-width="4"/><text x="60" y="30" fill="#0f172a" font-size="13" font-weight="700">MST — Minimum Cost Connect All (red = chosen)</text><text x="60" y="220" fill="#64748b" font-size="11">Total MST cost = 2 + 1 + 3 = 6</text></svg></div></section>
+<section class="answer-section"><h3>Key Points</h3><ul class="clean"><li>Independent sets satisfy hereditary and exchange properties.</li><li>MST edge-set forms a matroid (forests are independent).</li><li>Greedy on matroids is provably optimal.</li></ul></section>
+<section class="answer-section"><h3>Real-Time Example</h3><p>Picking maximum-weight non-conflicting tasks — greedy works because of matroid structure.</p></section>
+<div class="callout callout-exam"><strong class="label">Exam Keyword</strong> <span class="kw-exam">Greedy optimality · Independent sets · MST application</span></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Matroid = structure where Greedy always works; MST is classic example.</div>
+<div class="topic-nav"><a href="AA-U2-S01.html"><span class="label">← Previous</span>List shortest path algorithms and when to use each.</a><a class="next" href="AA-U2-S03.html"><span class="label">Next →</span>Explain amortized analysis with one example.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

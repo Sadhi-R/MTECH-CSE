@@ -1,0 +1,61 @@
+/* Shared site behavior */
+(function () {
+  const progress = document.getElementById('scroll-progress');
+  const backTop = document.getElementById('back-top');
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    if (progress) progress.style.width = scrolled + '%';
+    if (backTop) backTop.classList.toggle('show', window.scrollY > 400);
+  });
+
+  if (backTop) backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  }
+
+  // Tabs
+  document.querySelectorAll('[data-tabs]').forEach(group => {
+    const buttons = group.querySelectorAll('.tab-btn');
+    const panels = group.querySelectorAll('.tab-panel');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.tab;
+        buttons.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const panel = group.querySelector('#' + id);
+        if (panel) panel.classList.add('active');
+      });
+    });
+  });
+
+  // Persist checklist state
+  document.querySelectorAll('.checklist input[type=checkbox]').forEach(cb => {
+    const key = 'chk_' + (cb.id || cb.dataset.key || cb.nextSibling?.textContent?.slice(0, 40));
+    if (localStorage.getItem(key) === '1') cb.checked = true;
+    cb.addEventListener('change', () => localStorage.setItem(key, cb.checked ? '1' : '0'));
+  });
+
+  // Highlight active sidebar link by hash
+  function syncSidebar() {
+    const hash = location.hash;
+    if (!hash) return;
+    document.querySelectorAll('.sidebar a').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === hash);
+    });
+  }
+  window.addEventListener('hashchange', syncSidebar);
+  syncSidebar();
+})();
+
+function getBasePath() {
+  // Detect depth so relative asset paths work from nested pages
+  const path = location.pathname.replace(/\\/g, '/');
+  if (path.includes('/subjects/')) return '../../';
+  if (path.includes('/search/')) return '../';
+  return './';
+}

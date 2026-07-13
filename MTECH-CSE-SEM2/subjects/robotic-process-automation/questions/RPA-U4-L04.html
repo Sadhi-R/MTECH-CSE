@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Explain three-command enterprise use case. | Robotic Process Automation</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">RPA</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">RPA</a> · <a href="index.html">Questions</a> · <span>Explain three-command enterprise use case.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Explain three-command enterprise use case.</h1><div class="badge-row"><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-4</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain three-command enterprise use case.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>Three-command enterprise use case</strong> demonstrates combining three AA commands (e.g., Excel + String + Email) in one business workflow.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg" viewBox="0 0 440 220" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><rect x="30" y="80" width="90" height="50" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="75.0" y="110.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Bot
+Creator</text><rect x="160" y="70" width="110" height="70" rx="8" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/><text x="215.0" y="110.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Control
+Room</text><rect x="310" y="80" width="90" height="50" rx="8" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/><text x="355.0" y="110.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Bot
+Runner</text><line x1="120" y1="105" x2="160" y2="105" stroke="#0d9488" stroke-width="2" marker-end="url(#arr)"/><line x1="270" y1="105" x2="310" y2="105" stroke="#0d9488" stroke-width="2" marker-end="url(#arr)"/><rect x="160" y="170" width="110" height="35" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="215.0" y="192.5" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Target Apps (SAP/Excel/Web)</text><line x1="215" y1="140" x2="215" y2="170" stroke="#0d9488" stroke-width="2" marker-end="url(#arr)"/><text x="30" y="40" fill="#0f172a" font-size="13" font-weight="700">RPA Architecture — Build → Manage → Execute</text></svg></div></section>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Shows practical bot design: extract → transform → notify.</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Exam scenarios test ability to chain commands for real processes.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Command 1 extracts data; Command 2 processes; Command 3 delivers result.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Excel: Open and read daily sales report.</li><li>String: Format summary message from cells.</li><li>Email/Send Email: Attach report and send to manager.</li><li>Log success in Control Room.</li><li>Schedule daily 8 AM run.</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">Excel Read → String Format → Send Email</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">Trigger → Excel get data → String build body → Email send</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Start -&gt; Define -&gt; Process -&gt; Validate -&gt; Conclude -&gt; End</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>Daily: read sales.xlsx → string 'Total: $X' → email to sales-head@company.com.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Simple composable pattern</li><li>Covers read-transform-deliver</li><li>Easy to test each step</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Email server config needed</li><li>Failure in one step stops chain without Catch</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>Daily reporting bots</li><li>Alert notifications</li><li>Approval workflows</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Name exact three commands and data flow between them.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>No error handling between dependent commands.</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">ETL pattern: Extract(Excel)→Transform(String)→Load(Email)</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>Daily run: minutes vs manual hours</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>Temp Excel + email vars</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Why chain commands vs one recorder?</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Three-command = Excel + String + Email example</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Use case story. Three commands. Data flow. Schedule.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Enterprise use case chaining Excel, String, and Email commands for daily reporting.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Three-command use case: Excel extract → String format → Email deliver.</div>
+<div class="topic-nav"><a href="RPA-U4-L03.html"><span class="label">← Previous</span>Explain task editor customization.</a><a class="next" href="RPA-U4-L05.html"><span class="label">Next →</span>Compare recorders in Automation Anywhere.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

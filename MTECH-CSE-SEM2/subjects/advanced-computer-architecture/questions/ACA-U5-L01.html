@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Explain vector processing principles. | Advanced Computer Architecture</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">ACA</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">ACA</a> · <a href="index.html">Questions</a> · <span>Explain vector processing principles.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Explain vector processing principles.</h1><div class="badge-row"><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-5</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain vector processing principles.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>Vector processing</strong> applies single instructions to long arrays (vectors), exploiting data-level parallelism via pipelined functional units.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg" viewBox="0 0 420 190" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><rect x="40" y="80" width="70" height="50" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="75.0" y="110.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Core 1</text><rect x="130" y="80" width="70" height="50" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="165.0" y="110.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Core 2</text><rect x="220" y="80" width="70" height="50" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="255.0" y="110.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Core 3</text><rect x="310" y="80" width="70" height="50" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="345.0" y="110.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Core 4</text><text x="40" y="40" fill="#0f172a" font-size="13" font-weight="700">Parallelism — Multiple cores work simultaneously</text><text x="40" y="160" fill="#64748b" font-size="11">Task split across cores → finish faster (limited by serial part)</text></svg></div></section>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Vector registers hold N elements; vector instructions operate on all elements in pipeline fashion.</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Scientific codes with inner loops over arrays achieve near-peak FLOPS.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Load vector → execute vector op in pipelined FU → store result; strip-mining handles long arrays.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Define vector length (VL) and vector registers.</li><li>Vector load/store (unit stride).</li><li>Pipelined vector add/mul FUs.</li><li>Strip-mine loops longer than VL.</li><li>Chaining: result feeds next op without store.</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">VR1=[a1..a64] + VR2=[b1..b64] → VR3 (pipelined add)</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3>for i=0; i<n; i+=VL: load → vop → store (strip mine)</section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Start -&gt; Define -&gt; Process -&gt; Validate -&gt; Conclude -&gt; End</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>SAXPY y=a*x+y on 1M elements: vector unit processes 64/cycle.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>High sustained FLOPS</li><li>Amortizes instruction fetch</li><li>Chaining reduces memory traffic</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Poor on irregular/indirect access</li><li>Vector startup overhead</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>Supercomputers</li><li>BLAS Level 1/2</li><li>GPU SIMT kernels</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Mention strip-mining and chaining — exam differentiators.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Ignoring vector startup latency for short loops.</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">Vector=DLP on arrays | Scalar=one element/op</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>O(n/pipeline_rate) sustained</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>Vector registers + mask</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>What is vector chaining?</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Vector = pipeline one op over whole array</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Principles. VL. Strip-mining. Chaining. SAXPY example.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Vector registers, pipelining, strip-mining, chaining, performance model.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Vector processing pipelines one instruction over long operand arrays (DLP).</div>
+<div class="topic-nav"><a href="ACA-U5-S05.html"><span class="label">← Previous</span>Define multivector computer.</a><a class="next" href="ACA-U5-L02.html"><span class="label">Next →</span>Explain SIMD organizations.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

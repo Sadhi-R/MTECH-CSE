@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | CSE Sem-2 Study Hub</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+      <button class="nav-toggle" id="nav-toggle">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search/index.html">Search</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" style="max-width:800px;padding-top:2rem;">
+    <nav class="breadcrumb"><a href="index.html">Home</a> · <span>About</span></nav>
+    <h1>Complete Study Platform — What's Included</h1>
+
+    <article class="topic">
+      <h2>Site statistics</h2>
+      <div class="stats" style="position:static;margin:0;">
+        <div class="stat"><div class="num">100</div><div class="lbl">Question pages</div></div>
+        <div class="stat"><div class="num">20</div><div class="lbl">Unit notes</div></div>
+        <div class="stat"><div class="num">159</div><div class="lbl">Total HTML pages</div></div>
+        <div class="stat"><div class="num">4</div><div class="lbl">Subjects</div></div>
+      </div>
+    </article>
+
+    <article class="topic">
+      <h2>Per subject you get</h2>
+      <ul class="clean">
+        <li><strong>questions/</strong> — 25 dedicated pages (Prev/Next navigation, full 22-section long answers)</li>
+        <li><strong>units/</strong> — 5 unit-wise note pages + index</li>
+        <li><strong>mid1.html / mid2.html</strong> — cards linking to full answers</li>
+        <li><strong>semester.html</strong> — high-weightage long answers</li>
+        <li><strong>previous-questions.html</strong> — Mid-I & Mid-II paper questions + MCQ keys</li>
+        <li><strong>expected-questions.html</strong> — Top 10 + short/long with confidence</li>
+        <li><strong>revision.html</strong> — checklist, one-liners, quick links</li>
+      </ul>
+    </article>
+
+    <article class="topic">
+      <h2>How to study</h2>
+      <ol class="steps">
+        <li>Open a subject → <strong>Questions</strong> for any topic</li>
+        <li>Use <strong>Mid-I</strong> / <strong>Mid-II</strong> before internals</li>
+        <li>Use <strong>Past Papers</strong> for exact university questions</li>
+        <li>Use <strong>Expected</strong> before semester exam</li>
+        <li>Night before → <strong>Revision</strong> checklist</li>
+        <li><strong>Search</strong> (with filters) when you hear a keyword in class</li>
+      </ol>
+    </article>
+
+    <article class="topic">
+      <h2>Rebuild after edits</h2>
+      <p>If you edit <code>data/content.py</code>, run:</p>
+      <pre class="algo">python build_site.py</pre>
+      <p class="text-muted">This regenerates all question pages and search index.</p>
+    </article>
+
+    <article class="topic">
+      <h2>Sources</h2>
+      <p>Official syllabus images, question banks, Mid-I/Mid-II papers (VCET VR25).</p>
+    </article>
+  </main>
+  <button id="back-top">↑</button>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

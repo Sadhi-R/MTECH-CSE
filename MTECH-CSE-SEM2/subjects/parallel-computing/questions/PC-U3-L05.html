@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Compare mutex and semaphore. | Parallel Computing</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">PC</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">PC</a> · <a href="index.html">Questions</a> · <span>Compare mutex and semaphore.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Compare mutex and semaphore.</h1><div class="badge-row"><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-3</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Compare mutex and semaphore.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>Mutex</strong> (mutual exclusion lock) allows one thread at a time; <strong>semaphore</strong> counts permits allowing N concurrent accessors.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg" viewBox="0 0 430 170" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><rect x="40" y="60" width="150" height="50" rx="8" fill="#ef4444" stroke="#0f172a" stroke-width="1.5"/><text x="115.0" y="90.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Mutex (1 key)
+One at a time</text><rect x="230" y="60" width="150" height="50" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="305.0" y="90.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Semaphore (N keys)
+Up to N allowed</text><text x="40" y="40" fill="#0f172a" font-size="13" font-weight="700">Mutex vs Semaphore</text><text x="40" y="140" fill="#64748b" font-size="11">Mutex=binary lock | Semaphore=counting (e.g. 3 parking slots)</text></svg></div></section>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Mutex is binary; semaphore is counting synchronization primitive.</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Choose based on resource count and synchronization need.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Mutex lock before critical section; semaphore wait (P) decrements count, signal (V) increments.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Mutex: lock/unlock, one owner.</li><li>Binary semaphore: like mutex (0/1).</li><li>Counting semaphore: N slots (pool).</li><li>Mutex: ownership required.</li><li>Semaphore: no ownership, signal by any thread.</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">Mutex: [====lock====] one thread
+Semaphore(3): up to 3 threads in pool</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">Mutex: pthread_mutex_lock → CS → unlock
+Sem: sem_wait → use resource → sem_post</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Start -&gt; Define -&gt; Process -&gt; Validate -&gt; Conclude -&gt; End</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>Mutex protects bank balance update; semaphore limits 5 concurrent DB connections.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Mutex: simple exclusion</li><li>Semaphore: resource counting</li><li>Both prevent races</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Mutex deadlock if circular wait</li><li>Semaphore harder to debug</li><li>Priority inversion possible</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>Critical sections</li><li>Connection pools</li><li>Producer-consumer bounded buffer</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Table comparing ownership, count, and use case — exam classic.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Using mutex when counting semaphore needed (fixed pool size).</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">Mutex=1 at a time, owner | Semaphore=N permits, no owner</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>Uncontended lock O(1); contention serializes</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>Lock object + wait queue</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Binary vs counting semaphore?</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Mutex=exclusive lock; Semaphore=counted permits</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Definitions. Comparison table. pthread examples. Use cases.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Mutex vs semaphore: binary exclusive lock vs counting permits for resource pools.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Mutex allows one thread; semaphore counts N permits for resource pool synchronization.</div>
+<div class="topic-nav"><a href="PC-U3-L04.html"><span class="label">← Previous</span>Explain thread creation and lifecycle.</a><a class="next" href="PC-U4-S01.html"><span class="label">Next →</span>Define dense matrix.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

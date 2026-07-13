@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Explain Warshall technique. | Advanced Algorithms</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">AA</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">AA</a> · <a href="index.html">Questions</a> · <span>Explain Warshall technique.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Explain Warshall technique.</h1><div class="badge-row"><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-2</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain Warshall technique.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>Warshall's algorithm</strong> computes the <em>transitive closure</em> of a directed graph — whether path exists from every i to every j.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg" viewBox="0 0 420 230" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><circle cx="80" cy="120" r="22" fill="#0d9488" stroke="#0f172a" stroke-width="2"/><text x="80" y="125" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">A</text><circle cx="180" cy="70" r="22" fill="#38bdf8" stroke="#0f172a" stroke-width="2"/><text x="180" y="75" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">B</text><circle cx="280" cy="70" r="22" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/><text x="280" y="75" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">D</text><circle cx="180" cy="170" r="22" fill="#a78bfa" stroke="#0f172a" stroke-width="2"/><text x="180" y="175" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">C</text><line x1="102" y1="120" x2="158" y2="70" stroke="#64748b" stroke-width="2"/><line x1="202" y1="70" x2="258" y2="70" stroke="#64748b" stroke-width="2"/><line x1="102" y1="120" x2="158" y2="170" stroke="#64748b" stroke-width="2"/><path d="M80,120 L180,70 L280,70" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8,4"/><text x="80" y="30" fill="#0f172a" font-size="13" font-weight="700">DFS — Go Deep First (Stack)</text><text x="80" y="210" fill="#64748b" font-size="11">Path A→B→D (red dashed) before backtracking to C</text></svg></div></section>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Warshall uses dynamic programming similar to Floyd-Warshall but for reachability (boolean).</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Needed to know if one node can reach another through any path (dependency chains, reachability).</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>For each intermediate k, set reach[i][j] = reach[i][j] OR (reach[i][k] AND reach[k][j]).</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Build n×n boolean matrix from adjacency.</li><li>Initialize: reach[i][j]=1 if edge i→j or i=j.</li><li>Loop k from 1 to n.</li><li>Loop i,j: reach[i][j] |= reach[i][k] & reach[k][j].</li><li>Final matrix shows all reachable pairs.</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">Graph: 1→2, 2→3
+Reach matrix after Warshall: 1 reaches 2,3; 2 reaches 3</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">for k=1..n:
+  for i=1..n:
+    for j=1..n:
+      R[i][j] = R[i][j] OR (R[i][k] AND R[k][j])</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Start -&gt; Define -&gt; Process -&gt; Validate -&gt; Conclude -&gt; End</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>Software module dependencies — Warshall finds which modules transitively depend on others.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Simple triple loop</li><li>Works for all pairs</li><li>O(V³) predictable</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>O(V³) slow for huge graphs</li><li>Only reachability, not shortest path</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>Transitive closure</li><li>Dependency analysis</li><li>Compiler dead-code detection</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Contrast with Floyd-Warshall: Warshall=boolean reachability; Floyd=shortest distances.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Using Warshall when you need shortest path lengths (use Floyd-Warshall).</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">Warshall=reachability boolean | Floyd=shortest distance numeric</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>O(V³)</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>O(V²) matrix</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Difference between Warshall and Floyd-Warshall?</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Warshall = Who can Reach Whom (boolean)</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Define transitive closure. DP recurrence. Triple loop. Small example matrix.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Full algorithm, 3-node dry-run, matrix snapshots, vs Floyd-Warshall, applications.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Warshall = DP transitive closure in O(V³) using intermediate vertices.</div>
+<div class="topic-nav"><a href="AA-U2-L01.html"><span class="label">← Previous</span>Explain MST application with a real problem.</a><a class="next" href="AA-U2-L03.html"><span class="label">Next →</span>Explain graph colouring.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

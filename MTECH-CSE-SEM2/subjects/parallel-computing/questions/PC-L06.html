@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Parallel Sorting Approaches | Parallel Computing</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">PC</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">PC</a> · <a href="index.html">Questions</a> · <span>Parallel Sorting Approaches</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Parallel Sorting Approaches</h1><div class="badge-row"><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">88%</span><span class="badge badge-unit">Unit-3</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain odd-even transposition sort and bitonic sort in parallel setting.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong>Parallel sorting divides data among processors and performs coordinated compare-exchange phases.</div>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Odd-even and bitonic are classic network-style parallel sorts.</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>They illustrate communication/computation interplay.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Processors exchange border elements and locally sort in rounds.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Describe odd-even phases</li><li>Describe bitonic merge</li><li>Compare complexity</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">Sorting network diagram with compare-exchange wires.</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">Phase-based compare-swap schedule across processors.</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Local sort -&gt; exchange -&gt; merge -&gt; repeat until global order.</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>Multiple counters sorting token numbers in coordinated passes.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Regular structure</li><li>Easy hardware mapping</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Communication-heavy for large distributed datasets</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>GPU sorting</li><li>Network processors</li><li>Parallel libraries</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Add phase count and communication per phase.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Skipping initial local sort before exchanges.</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">Bitonic works best on power-of-two sizes with structured network.</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>Varies by network; often O((n/p)log(n/p)+communication).</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>Needs local arrays plus exchange buffers.</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Occasional interview topic in HPC roles.</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Sort locally, then repeatedly exchange and merge.</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Explain both algorithms with phase diagrams.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Compare communication cost and scalability.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Parallel sorting needs both local work and coordinated exchanges.</div>
+<div class="topic-nav"><a href="PC-L05.html"><span class="label">← Previous</span>Parallel Load Balancing</a><a class="next" href="PC-L07.html"><span class="label">Next →</span>Parallel BFS and DFS</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

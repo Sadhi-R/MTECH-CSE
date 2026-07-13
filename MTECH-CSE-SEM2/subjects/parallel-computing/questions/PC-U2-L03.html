@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Explain load balancing techniques. | Parallel Computing</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">PC</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">PC</a> · <a href="index.html">Questions</a> · <span>Explain load balancing techniques.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Explain load balancing techniques.</h1><div class="badge-row"><span class="badge badge-high">High Weightage</span><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-2</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain load balancing techniques.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>Load balancing</strong> distributes work evenly across processors to minimize idle time.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg" viewBox="0 0 360 210" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><rect x="30" y="50" width="80" height="120" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="70.0" y="115.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Worker 1
+2 tasks</text><rect x="130" y="50" width="80" height="120" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="170.0" y="115.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Worker 2
+2 tasks</text><rect x="230" y="50" width="80" height="120" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="270.0" y="115.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Worker 3
+2 tasks</text><text x="30" y="30" fill="#0f172a" font-size="13" font-weight="700">Load Balancing — Equal work per processor</text><text x="30" y="195" fill="#64748b" font-size="11">Redistribute tasks so no core sits idle</text></svg></div></section>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Static: predetermined assignment. Dynamic: work queue, work-stealing, or task migration.</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Critical when workload is irregular or input-dependent.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Measure load per PE; redistribute tasks from overloaded to underloaded processors.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Static: block/cyclic partition upfront.</li><li>Dynamic: central/global task queue.</li><li>Work-stealing: idle PE takes from busy neighbor.</li><li>Semi-static: periodic redistribution.</li><li>Metrics: load imbalance factor, idle time.</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">Busy PEs with long queues; idle PE steals half the tasks</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">if idle: steal from busiest queue; else process local tasks</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Start -&gt; Define -&gt; Process -&gt; Validate -&gt; Conclude -&gt; End</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>Parallel tree search: dynamic queue assigns unexplored nodes to idle workers.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Static: zero runtime overhead</li><li>Dynamic: handles irregularity</li><li>Work-stealing: decentralized</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Dynamic: queue contention</li><li>Migration cost</li><li>Static fails on irregular input</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>N-body simulation</li><li>Branch-and-bound</li><li>Web crawling</li><li>OpenMP dynamic schedule</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Define static vs dynamic with when-to-use — exam staple.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Static balancing for highly irregular workloads.</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">Static=fixed partition | Dynamic=runtime reassignment</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>Goal: minimize max(PE load) - min(PE load)</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>Task queues per PE</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Work-stealing vs central queue?</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Load balance = even work across PEs</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Static/dynamic/stealing. When each. Example. Metrics.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Load balancing: static (regular), dynamic/work-stealing (irregular workloads).</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Load balancing evens work via static partition or dynamic/work-stealing assignment.</div>
+<div class="topic-nav"><a href="PC-U2-L02.html"><span class="label">← Previous</span>Explain decomposition strategies.</a><a class="next" href="PC-U2-L04.html"><span class="label">Next →</span>Explain analytical modeling of parallel programs.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

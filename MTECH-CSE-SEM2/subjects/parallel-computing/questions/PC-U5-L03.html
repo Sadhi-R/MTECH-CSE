@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Explain DFS algorithm. | Parallel Computing</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">PC</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">PC</a> · <a href="index.html">Questions</a> · <span>Explain DFS algorithm.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Explain DFS algorithm.</h1><div class="badge-row"><span class="badge badge-high">High Weightage</span><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-5</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain DFS algorithm.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>DFS (Depth-First Search)</strong> explores graph by going as deep as possible before backtracking, using stack/recursion.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg" viewBox="0 0 420 230" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><circle cx="80" cy="120" r="22" fill="#0d9488" stroke="#0f172a" stroke-width="2"/><text x="80" y="125" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">A</text><circle cx="180" cy="70" r="22" fill="#38bdf8" stroke="#0f172a" stroke-width="2"/><text x="180" y="75" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">B</text><circle cx="280" cy="70" r="22" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/><text x="280" y="75" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">D</text><circle cx="180" cy="170" r="22" fill="#a78bfa" stroke="#0f172a" stroke-width="2"/><text x="180" y="175" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">C</text><line x1="102" y1="120" x2="158" y2="70" stroke="#64748b" stroke-width="2"/><line x1="202" y1="70" x2="258" y2="70" stroke="#64748b" stroke-width="2"/><line x1="102" y1="120" x2="158" y2="170" stroke="#64748b" stroke-width="2"/><path d="M80,120 L180,70 L280,70" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8,4"/><text x="80" y="30" fill="#0f172a" font-size="13" font-weight="700">DFS — Go Deep First (Stack)</text><text x="80" y="210" fill="#64748b" font-size="11">Path A→B→D (red dashed) before backtracking to C</text></svg></div></section>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Visits vertices in depth order; fundamental for connectivity, cycles, and topological sort.</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Parallel DFS is harder due to sequential stack nature; used in decomposition.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Mark visited; recursively visit unvisited neighbors; backtrack when dead end.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Mark all vertices unvisited.</li><li>For each unvisited v: DFS(v).</li><li>DFS(v): mark visited; for each neighbor u unvisited: DFS(u).</li><li>Use stack for iterative version.</li><li>Record discovery/finish times.</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">A→B→D→back→C
+Stack: push A, push B, push D, pop D, pop B...</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">DFS(v): visited[v]=true; for u in adj[v]: if !visited[u]: DFS(u)</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Start -&gt; Define -&gt; Process -&gt; Validate -&gt; Conclude -&gt; End</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>Detect cycle in course prereqs: DFS back edge to ancestor on stack.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>O(V+E) time</li><li>O(V) space</li><li>Simple recursive structure</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Deep graphs risk stack overflow</li><li>Not shortest path</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>Cycle detection</li><li>Topological sort</li><li>Maze solving</li><li>Connected components</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Show discovery/finish times on small DAG.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Not marking visited → infinite loop on cycles.</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">DFS=depth first stack | BFS=level order queue</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>O(V+E)</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>O(V) visited + stack</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>DFS vs BFS when?</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>DFS = go deep, backtrack, use stack</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Algorithm. Recursive/iterative. Times. Cycle detection.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>DFS: stack/recursion, O(V+E), applications in cycles and topo sort.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>DFS explores depth-first using stack/recursion in O(V+E) time.</div>
+<div class="topic-nav"><a href="PC-U5-L02.html"><span class="label">← Previous</span>Explain Dijkstra algorithm with example.</a><a class="next" href="PC-U5-L04.html"><span class="label">Next →</span>Explain BFS algorithm.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Explain parallel bubble and quick sort. | Parallel Computing</title>
+<link rel="stylesheet" href="../../../assets/css/style.css"/>
+</head><body>
+<div id="scroll-progress"></div>
+<nav class="navbar"><div class="nav-inner">
+<a class="brand" href="../../../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+<ul class="nav-links" id="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../index.html">PC</a></li><li><a href="../units/index.html">Units</a></li><li><a href="index.html" class="active">Questions</a></li><li><a href="../mid1.html">Mid-I</a></li><li><a href="../mid2.html">Mid-II</a></li><li><a href="../semester.html">Semester</a></li><li><a href="../previous-questions.html">Past Papers</a></li><li><a href="../expected-questions.html">Expected</a></li><li><a href="../revision.html">Revision</a></li><li><a href="../../../search/index.html">Search</a></li></ul>
+<a class="nav-search-btn" href="../../../search/index.html">⌕ Search</a>
+</div></nav>
+<main class="container">
+<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">PC</a> · <a href="index.html">Questions</a> · <span>Explain parallel bubble and quick sort.</span></nav>
+<article class="topic question-page">
+<div class="topic-header"><h1>Explain parallel bubble and quick sort.</h1><div class="badge-row"><span class="badge badge-faq">Question Bank</span><span class="badge badge-conf">90%</span><span class="badge badge-unit">Unit-4</span><span class="badge badge-exam">Long</span></div></div>
+<div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">Explain parallel bubble and quick sort.</p></div>
+<div class="callout callout-def"><strong class="label">Definition</strong><strong>Parallel bubble sort</strong> uses odd-even transposition on distributed data; <strong>parallel quicksort</strong> partitions and recursively sorts subarrays on different PEs.</div>
+<section class="answer-section sec-visual"><div class="visual-example"><p class="diagram-label">Visual Example</p><svg class="visual-svg" viewBox="0 0 420 240" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs><rect x="40" y="56" width="40" height="64" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="60.0" y="93.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">8</text><rect x="95" y="96" width="40" height="24" rx="8" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/><text x="115.0" y="113.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">3</text><rect x="150" y="80" width="40" height="40" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="170.0" y="105.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">5</text><rect x="205" y="112" width="40" height="8" rx="8" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/><text x="225.0" y="121.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">1</text><rect x="260" y="48" width="40" height="72" rx="8" fill="#0d9488" stroke="#0f172a" stroke-width="1.5"/><text x="280.0" y="89.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">9</text><rect x="315" y="104" width="40" height="16" rx="8" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/><text x="335.0" y="117.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">2</text><text x="40" y="40" fill="#0f172a" font-size="13" font-weight="700">Sorting — Arrange elements in order</text><text x="40" y="210" fill="#64748b" font-size="11">Before: [8,3,5,1,9,2] → After: [1,2,3,5,8,9]</text><rect x="40" y="162" width="40" height="8" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="60.0" y="171.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">1</text><rect x="95" y="154" width="40" height="16" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="115.0" y="167.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">2</text><rect x="150" y="146" width="40" height="24" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="170.0" y="163.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">3</text><rect x="205" y="130" width="40" height="40" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="225.0" y="155.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">5</text><rect x="260" y="106" width="40" height="64" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="280.0" y="143.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">8</text><rect x="315" y="98" width="40" height="72" rx="8" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5"/><text x="335.0" y="139.0" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">9</text></svg></div></section>
+<section class="answer-section sec-introduction"><h3>Introduction</h3><p>Bubble: synchronous compare-exchange phases. Quicksort: divide with pivot, conquer in parallel.</p></section>
+<section class="answer-section sec-why"><h3>Why It Is Needed</h3><p>Sorting exposes data movement and synchronization patterns.</p></section>
+<section class="answer-section sec-working"><h3>Working Principle</h3><p>Odd-even: even and odd phases of neighbor compare-swap. Quicksort: broadcast pivot, partition, recurse on halves.</p></section>
+<section class="answer-section sec-steps"><h3>Step-by-Step Explanation</h3><ul class='clean'><li>Bubble odd-even: p phases, compare-swap with neighbor.</li><li>Suitable for linear array/network.</li><li>Quicksort: choose pivot, partition list.</li><li>Send partitions to other PEs recursively.</li><li>Combine sorted sublists (often implicit).</li></ul></section>
+<section class="answer-section sec-diagram"><h3>Architecture / Diagram</h3><pre class="diagram">Odd-even: phase0 swap(0,1), phase1 swap(1,2)...
+Quicksort: pivot → left|pivot|right on diff PEs</pre></section>
+<section class="answer-section sec-algorithm"><h3>Algorithm</h3><pre class="algo">Bubble: repeat odd/even neighbor swaps until sorted
+Quicksort: parallel recursive partition</pre></section>
+<section class="answer-section sec-flowchart"><h3>Flowchart</h3><pre class="diagram">Start -&gt; Define -&gt; Process -&gt; Validate -&gt; Conclude -&gt; End</pre></section>
+<section class="answer-section sec-example"><h3>Real-Time Example</h3><p>8 elements on 4 PEs: odd-even sort in O(p) phases; quicksort splits 8→4→2→1.</p></section>
+<section class="answer-section sec-advantages"><h3>Advantages</h3><ul class='clean'><li>Odd-even: simple on mesh</li><li>Quicksort: good average parallelism</li><li>Both teach sync patterns</li></ul></section>
+<section class="answer-section sec-disadvantages"><h3>Disadvantages</h3><ul class='clean'><li>Bubble O(n) phases, slow</li><li>Quicksort pivot imbalance</li><li>High communication in quicksort</li></ul></section>
+<section class="answer-section sec-applications"><h3>Applications</h3><ul class='clean'><li>Teaching parallel sorting</li><li>Distributed databases</li><li>MapReduce sort</li></ul></section>
+<section class="answer-section sec-exam_tips"><h3>Exam Tips</h3><p>Describe odd-even phases with 4-processor example.</p></section>
+<section class="answer-section sec-mistakes"><h3>Common Mistakes</h3><ul class='clean'><li>Using sequential bubble on one PE only (misses parallel pattern).</li></ul></section>
+<section class="answer-section sec-comparison"><h3>Difference Table</h3><pre class="diagram">Bubble=neighbor swap phases | Quicksort=partition recurse</pre></section>
+<section class="answer-section sec-time"><h3>Time Complexity</h3><p>Odd-even O(p) phases; quicksort O(log p) depth average</p></section>
+<section class="answer-section sec-space"><h3>Space Complexity</h3><p>Distributed array elements</p></section>
+<section class="answer-section sec-interview"><h3>Interview Questions</h3><ul class='clean'><li>Odd-even vs bitonic sort?</li></ul></section>
+<section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Parallel sort = odd-even bubble or parallel quicksort</p></section>
+<div class="answer-panel"><h4>5-Mark Answer</h4><p>Both algorithms. Steps. Parallel phases. Small example.</p></div>
+<div class="answer-panel"><h4>10-Mark Answer</h4><p>Parallel bubble (odd-even) and quicksort (partition/recurse) with complexity.</p></div>
+<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
+<div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Parallel bubble: odd-even transposition; quicksort: parallel partition and recurse.</div>
+<div class="topic-nav"><a href="PC-U4-L02.html"><span class="label">← Previous</span>Explain parallel matrix-matrix multiplication.</a><a class="next" href="PC-U4-L04.html"><span class="label">Next →</span>Explain bucket and enumeration sort.</a></div>
+</article></main>
+<button id="back-top" title="Back to top">↑</button>
+<script src="../../../assets/js/main.js"></script>
+</body></html>
