@@ -768,12 +768,11 @@ const SEARCH_INDEX = [
     "title": "Q1: Superscalar techniques and performance",
     "subject": "Advanced Computer Architecture",
     "unit": "Unit-3",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO3"
     ],
     "type": "short",
@@ -785,12 +784,11 @@ const SEARCH_INDEX = [
     "title": "Q2: Memory consistency models",
     "subject": "Advanced Computer Architecture",
     "unit": "Unit-3",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO3"
     ],
     "type": "short",
@@ -802,12 +800,11 @@ const SEARCH_INDEX = [
     "title": "Q3: Synchronization in multiprocessors",
     "subject": "Advanced Computer Architecture",
     "unit": "Unit-4",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO4"
     ],
     "type": "short",
@@ -819,12 +816,11 @@ const SEARCH_INDEX = [
     "title": "Q4: SIMD and multivector architecture",
     "subject": "Advanced Computer Architecture",
     "unit": "Unit-5",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO4"
     ],
     "type": "short",
@@ -836,12 +832,11 @@ const SEARCH_INDEX = [
     "title": "Q5: Compound vector processing",
     "subject": "Advanced Computer Architecture",
     "unit": "Unit-5",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO5"
     ],
     "type": "short",
@@ -853,12 +848,11 @@ const SEARCH_INDEX = [
     "title": "Q6: CM-5 architecture",
     "subject": "Advanced Computer Architecture",
     "unit": "Unit-5",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO5"
     ],
     "type": "short",
@@ -870,12 +864,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q1",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -887,12 +880,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q2",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -904,12 +896,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q3",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -921,12 +912,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q4",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -938,12 +928,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q5",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -955,12 +944,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q6",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -972,12 +960,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q7",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -989,12 +976,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q8",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -1006,12 +992,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q9",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -1023,12 +1008,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q10",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -1040,12 +1024,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q11",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -1057,12 +1040,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q12",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -1074,12 +1056,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q13",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -1091,12 +1072,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q14",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -1108,12 +1088,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q15",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -1125,12 +1104,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q16",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -1142,12 +1120,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q17",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -1159,12 +1136,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q18",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -1176,12 +1152,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q19",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -1193,12 +1168,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q20",
     "subject": "Advanced Computer Architecture",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -2710,12 +2684,11 @@ const SEARCH_INDEX = [
     "title": "Q1: Audit Log relevance",
     "subject": "Robotic Process Automation",
     "unit": "Unit-3",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO3"
     ],
     "type": "short",
@@ -2727,12 +2700,11 @@ const SEARCH_INDEX = [
     "title": "Q2: API exposure in RPA",
     "subject": "Robotic Process Automation",
     "unit": "Unit-3",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO3"
     ],
     "type": "short",
@@ -2744,12 +2716,11 @@ const SEARCH_INDEX = [
     "title": "Q3: Excel, String, XML commands",
     "subject": "Robotic Process Automation",
     "unit": "Unit-4",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO4"
     ],
     "type": "short",
@@ -2761,12 +2732,11 @@ const SEARCH_INDEX = [
     "title": "Q4: Three-command automation use case",
     "subject": "Robotic Process Automation",
     "unit": "Unit-4",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO4"
     ],
     "type": "short",
@@ -2778,12 +2748,11 @@ const SEARCH_INDEX = [
     "title": "Q5: FTP, PGP, Terminal commands",
     "subject": "Robotic Process Automation",
     "unit": "Unit-5",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO5"
     ],
     "type": "short",
@@ -2795,12 +2764,11 @@ const SEARCH_INDEX = [
     "title": "Q6: Workflow and Report Designers",
     "subject": "Robotic Process Automation",
     "unit": "Unit-5",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO5"
     ],
     "type": "short",
@@ -2812,12 +2780,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q1",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -2829,12 +2796,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q2",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -2846,12 +2812,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q3",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -2863,12 +2828,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q4",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -2880,12 +2844,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q5",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -2897,12 +2860,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q6",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -2914,12 +2876,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q7",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -2931,12 +2892,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q8",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -2948,12 +2908,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q9",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -2965,12 +2924,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q10",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -2982,12 +2940,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q11",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -2999,12 +2956,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q12",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -3016,12 +2972,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q13",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -3033,12 +2988,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q14",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -3050,12 +3004,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q15",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -3067,12 +3020,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q16",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -3084,12 +3036,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q17",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -3101,12 +3052,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q18",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -3118,12 +3068,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q19",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",
@@ -3135,12 +3084,11 @@ const SEARCH_INDEX = [
     "title": "Mid-II MCQ Q20",
     "subject": "Robotic Process Automation",
     "unit": "Mid-II Objective",
-    "exam": "Mid-II 2024-25",
+    "exam": "Mid-II Paper",
     "tags": [
       "mid-ii",
       "mid2",
       "past-paper",
-      "2024-25",
       "CO-MCQ"
     ],
     "type": "short",

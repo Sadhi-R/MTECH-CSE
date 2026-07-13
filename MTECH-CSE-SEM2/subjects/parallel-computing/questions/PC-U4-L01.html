@@ -42,7 +42,6 @@ Each: y[i]=Σ A[i][j]*x[j]</pre></section>
 <section class="answer-section sec-memory"><h3>Memory Tricks</h3><p>Parallel matvec = row split + dot products</p></section>
 <div class="answer-panel"><h4>5-Mark Answer</h4><p>Partition scheme. Broadcast x. Per-row compute. Complexity.</p></div>
 <div class="answer-panel"><h4>10-Mark Answer</h4><p>Parallel matvec: row-block A, broadcast x, local dot products, O(n²/p) compute.</p></div>
-<div class="answer-panel"><h4>Semester Exam Version</h4><p>M.Tech CSE Sem-2 (VR25)</p></div>
 <div class="callout callout-keyword"><strong class="label">One-Line Revision</strong>Parallel matvec: distribute rows of A, broadcast x, each PE computes local dot products.</div>
 <div class="topic-nav"><a href="PC-U4-S05.html"><span class="label">← Previous</span>What is divide-and-conquer?</a><a class="next" href="PC-U4-L02.html"><span class="label">Next →</span>Explain parallel matrix-matrix multiplication.</a></div>
 </article></main>

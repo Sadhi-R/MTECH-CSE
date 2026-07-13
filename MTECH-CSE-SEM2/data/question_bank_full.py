@@ -1,6 +1,6 @@
 """Full question-bank dataset for M.Tech CSE Sem-2 (VR25)."""
 
-SEMESTER = "M.Tech CSE Sem-2 (VR25)"
+SEMESTER = ""
 
 
 def _long_question(

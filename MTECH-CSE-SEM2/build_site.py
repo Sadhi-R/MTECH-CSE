@@ -134,7 +134,7 @@ def render_long(q: dict) -> str:
             if key in ("introduction", "why", "working", "example", "exam_tips", "time", "space", "memory"):
                 v = f"<p>{v}</p>" if "<" not in v else v
             parts.append(fmt_block(key, v).replace('class="answer-section"', f'class="answer-section sec-{key}"', 1).replace(f"<h3>{key.replace('_',' ').title()}</h3>", f"<h3>{label}</h3>", 1))
-    for label, key in [("5-Mark Answer", "mark5"), ("10-Mark Answer", "mark10"), ("Semester Exam Version", "semester")]:
+    for label, key in [("5-Mark Answer", "mark5"), ("10-Mark Answer", "mark10")]:
         if q.get(key):
             parts.append(f'<div class="answer-panel"><h4>{label}</h4><p>{q[key]}</p></div>')
     if q.get("one_liner"):
@@ -300,7 +300,7 @@ def write_past(subject: str, data: dict) -> None:
     body = f"""
 <nav class="breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Previous Papers</span></nav>
 <h1>Previous Question Papers — {esc(SUBJECTS[subject]['name'])}</h1>
-{f'<div class="callout callout-exam"><strong class="label">Official Mid-II Paper</strong> {esc(data.get("mid2_exam", ""))} — descriptive + objective with full answers below.</div>' if data.get("mid2_exam") else ''}
+{f'<div class="callout callout-exam"><strong class="label">Mid-II Paper</strong> Descriptive and objective questions with full answers.</div>' if data.get("mid2_exam") else ''}
 {list_section('Mid-I Descriptive (Answer any 4 × 5 marks)', data.get('mid1_descriptive', []))}
 {list_section('Mid-I MCQ / Objective Keys', data.get('mid1_mcq', []))}
 {list_section('Mid-II Descriptive (Answer any 4 × 5 marks)', data.get('mid2_descriptive', []))}
@@ -345,7 +345,7 @@ def write_mid_pages(subject: str, questions: list, which: str) -> None:
         desc = [enrich(q) for q in paper["descriptive"]]
         obj = [enrich(q) for q in paper["objective"]]
         filtered = desc + obj
-        exam_hdr = f'<div class="callout callout-exam"><strong class="label">Official Paper</strong> {esc(paper["exam"])} · Descriptive: answer any 4 × 5 marks · Objective: 10 MCQ + 6 fill-ups + 4 match</div>'
+        exam_hdr = '<div class="callout callout-exam"><strong class="label">Mid-II</strong> Descriptive: answer any 4 × 5 marks · Objective: MCQ + fill-ups + match</div>'
         desc_cards = "".join(f"""<a class="card card-link" href="questions/{q['id']}.html">
 <span class="badge badge-important">5 Marks</span>
 <h3>{esc(q['title'])}</h3>
@@ -358,9 +358,9 @@ def write_mid_pages(subject: str, questions: list, which: str) -> None:
 <div class="meta">{badges(q)}</div></a>""" for q in obj)
         body = f"""
 <nav class="breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Mid-II</span></nav>
-<h1>{esc(SUBJECTS[subject]['name'])} — Mid-II 2024-25</h1>
+<h1>{esc(SUBJECTS[subject]['name'])} — Mid-II</h1>
 {exam_hdr}
-<p class="text-muted mb-2">Exact questions from university paper with clear answers and visual examples.</p>
+<p class="text-muted mb-2">Questions and answers with visual examples.</p>
 <h2>Descriptive ({len(desc)} questions — answer any 4)</h2>
 <div class="grid-2">{desc_cards}</div>
 <h2>Objective ({len(obj)} questions — all compulsory)</h2>
@@ -384,7 +384,7 @@ def write_mid_pages(subject: str, questions: list, which: str) -> None:
 <h1>{esc(SUBJECTS[subject]['name'])} — {which.upper().replace('MID','Mid ')}</h1>
 <p class="text-muted mb-2">Each card opens a dedicated page with the full answer (5-mark / 10-mark / semester versions).</p>
 <div class="grid-2">{cards}</div>
-<div class="callout callout-exam"><strong class="label">Tip</strong> Also see <a href="previous-questions.html">Past Papers</a> for exact university questions.</div>"""
+<div class="callout callout-exam"><strong class="label">Tip</strong> Also see <a href="previous-questions.html">Past Papers</a> for Mid-I and Mid-II questions.</div>"""
     (ROOT / "subjects" / subject / f"{which}.html").write_text(shell(which.upper(), subject, key, body), encoding="utf-8")
 
 
@@ -411,10 +411,10 @@ def write_question_bank_page(subject: str, questions: list) -> None:
             sec += '</ol>'
         sections.append(sec)
     body = f"""
-<nav class="breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Question Bank (DOCX)</span></nav>
+<nav class="breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Question Bank</span></nav>
 <h1>Question Bank — {esc(SUBJECTS[subject]['name'])}</h1>
 <div class="callout callout-tip"><strong class="label">All answers written clearly</strong> Every question below links to a dedicated page with definition, steps, examples, 5-mark and 10-mark answers.</div>
-<p class="text-muted mb-2">{len(questions)} questions from official Question Bank DOCX · {len([q for q in questions if q['type']=='short'])} short · {len([q for q in questions if q['type']=='long'])} long</p>
+<p class="text-muted mb-2">{len(questions)} questions · {len([q for q in questions if q['type']=='short'])} short · {len([q for q in questions if q['type']=='long'])} long</p>
 {''.join(sections)}"""
     (ROOT / "subjects" / subject / "question-bank.html").write_text(shell("Question Bank", subject, "hub", body), encoding="utf-8")
 
@@ -425,16 +425,15 @@ def write_subject_hub(subject: str, questions: list) -> None:
 <nav class="breadcrumb"><a href="../../index.html">Home</a> · <span>{esc(info['name'])}</span></nav>
 <span class="badge badge-unit">{esc(info['code'])}</span>
 <h1>{esc(info['name'])}</h1>
-<p class="text-muted">{SEMESTER} · {len(questions)} Question Bank answers (DOCX)</p>
+<p class="text-muted">{len(questions)} questions · Mid-I · Mid-II · Semester</p>
 <div class="quick-links">
-<a href="question-bank.html">Question Bank (DOCX)</a>
+<a href="question-bank.html">Question Bank</a>
 <a href="questions/index.html">All Answers ({len(questions)})</a>
 <a href="units/index.html">Unit Notes</a>
 <a href="mid1.html">Mid-I</a><a href="mid2.html">Mid-II</a>
 <a href="semester.html">Semester</a><a href="expected-questions.html">Expected</a>
 <a href="previous-questions.html">Past Papers</a><a href="revision.html">Revision</a>
 </div>
-<img class="syllabus-img" src="../../assets/images/{info['syllabus']}" alt="Syllabus"/>
 <div class="stats" style="margin:1.5rem 0;position:static;">
 <div class="stat"><div class="num">{len(questions)}</div><div class="lbl">Questions</div></div>
 <div class="stat"><div class="num">5</div><div class="lbl">Units</div></div>

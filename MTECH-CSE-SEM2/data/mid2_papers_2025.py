@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Mid-II 2024-25 official papers — ACA & RPA (July 2025 exam)."""
+"""Mid-II exam papers — ACA & RPA."""
 
-SEMESTER = "M.Tech CSE Sem-2 (VR25)"
+SEMESTER = ""
 
 
 def _paper_short(qid, title, question, unit, co, definition, key_points, example, exam_keyword, mark5, one_liner):
@@ -11,9 +11,9 @@ def _paper_short(qid, title, question, unit, co, definition, key_points, example
         "question": question,
         "type": "short",
         "unit": unit,
-        "tags": ["mid-ii", "mid2", "past-paper", "2024-25", co],
+        "tags": ["mid-ii", "mid2", "past-paper", co],
         "weight": "high",
-        "asked": "Mid-II 2024-25",
+        "asked": "Mid-II Paper",
         "confidence": "100%",
         "definition": definition,
         "key_points": key_points,
@@ -34,7 +34,7 @@ def _paper_mcq(qid, num, question, answer, explanation, options_note=""):
         f"CO-MCQ",
         f"<strong>Correct Answer: {answer}</strong>{options_note}",
         [explanation],
-        "Official Mid-II Objective Paper, July 2025.",
+        "Practice example for exam preparation.",
         answer,
         f"{answer} — {explanation}",
         f"Q{num}: {answer}",
@@ -437,14 +437,14 @@ RPA_MID2_OBJECTIVE = [
 
 MID2_PAPERS_2025 = {
     "advanced-computer-architecture": {
-        "exam": "Mid-II July 2025 · AY 2024-25",
+        "exam": "Mid-II · Descriptive + Objective",
         "descriptive": ACA_MID2_DESCRIPTIVE,
         "objective": ACA_MID2_OBJECTIVE,
         "descriptive_ids": [q["id"] for q in ACA_MID2_DESCRIPTIVE],
         "objective_ids": [q["id"] for q in ACA_MID2_OBJECTIVE],
     },
     "robotic-process-automation": {
-        "exam": "Mid-II July 2025 · AY 2024-25",
+        "exam": "Mid-II · Descriptive + Objective",
         "descriptive": RPA_MID2_DESCRIPTIVE,
         "objective": RPA_MID2_OBJECTIVE,
         "descriptive_ids": [q["id"] for q in RPA_MID2_DESCRIPTIVE],
