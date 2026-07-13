@@ -3,40 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
   <title>M.Tech CSE Sem-2 | Login</title>
   <meta name="description" content="M.Tech CSE Semester 2 study portal — login to access questions and answers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body class="login-page">
   <div class="landing-wrap">
-    <section class="landing-hero">
+    <section class="landing-hero reveal">
       <div class="landing-brand">
         <span class="brand-mark brand-mark-lg">M2</span>
         <p class="landing-eyebrow">M.Tech Computer Science & Engineering</p>
-        <h1>Semester 2 Study Portal</h1>
+        <h1>Semester 2 <span>Study Portal</span></h1>
         <p class="landing-lead">Question banks, Mid-I & Mid-II answers, semester prep, and visual explanations for all four core subjects.</p>
         <ul class="landing-features">
-          <li>Advanced Algorithms</li>
-          <li>Advanced Computer Architecture</li>
-          <li>Parallel Computing</li>
-          <li>Robotic Process Automation</li>
+          <li>
+            <span class="feat-icon" aria-hidden="true">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </span>
+            Advanced Algorithms
+          </li>
+          <li>
+            <span class="feat-icon" aria-hidden="true">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </span>
+            Advanced Computer Architecture
+          </li>
+          <li>
+            <span class="feat-icon" aria-hidden="true">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+            </span>
+            Parallel Computing
+          </li>
+          <li>
+            <span class="feat-icon" aria-hidden="true">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>
+            </span>
+            Robotic Process Automation
+          </li>
         </ul>
       </div>
     </section>
 
-    <section class="landing-login">
+    <section class="landing-login reveal">
       <div class="login-card">
-        <h2>Student Login</h2>
-        <p class="text-muted text-sm mb-2">Sign in to access questions, answers, and revision material.</p>
+        <div class="login-card-header">
+          <div class="login-card-icon" aria-hidden="true">
+            <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          </div>
+          <div>
+            <h2>Student Login</h2>
+            <p class="text-muted text-sm">Access your study materials</p>
+          </div>
+        </div>
 
         <form id="login-form" class="login-form" autocomplete="on">
-          <label for="login-email">Email</label>
-          <input type="email" id="login-email" name="email" placeholder="your.email@example.com" required autocomplete="username" />
+          <label for="login-email">Email address</label>
+          <input type="email" id="login-email" name="email" placeholder="you@example.com" required autocomplete="username" />
 
           <label for="login-password">Password</label>
-          <input type="password" id="login-password" name="password" placeholder="Enter password" required autocomplete="current-password" />
+          <div class="input-wrap">
+            <input type="password" id="login-password" name="password" placeholder="Enter your password" required autocomplete="current-password" />
+            <button type="button" class="password-toggle" id="password-toggle" aria-label="Show password">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
 
-          <p id="login-error" class="login-error" hidden>Invalid email or password.</p>
+          <p id="login-error" class="login-error" hidden role="alert">Invalid email or password. Please try again.</p>
 
           <button type="submit" class="btn btn-primary btn-block">Login to Study Hub</button>
         </form>
@@ -49,5 +84,10 @@
   </footer>
 
   <script src="assets/js/auth.js"></script>
+  <script>
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 80 + i * 120);
+    });
+  </script>
 </body>
 </html>

@@ -81,7 +81,10 @@ def shell(title: str, subject: str, active: str, body: str, depth: str = "../../
     return f"""<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#0f172a"/>
 <title>{esc(title)} | {esc(SUBJECTS[subject]['name'])}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="{depth}assets/css/style.css"/>
 </head><body>
 {nav(subject, active, depth, nested)}
