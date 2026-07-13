@@ -30,9 +30,12 @@
     });
   }
 
-  // Scroll reveal
+  // Scroll reveal (skip on touch — CSS shows content immediately)
+  const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!prefersReduced && 'IntersectionObserver' in window) {
+  if (isTouch || prefersReduced) {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
+  } else if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -48,8 +51,6 @@
   } else {
     document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
   }
-
-  // Tabs
   document.querySelectorAll('[data-tabs]').forEach((group) => {
     const buttons = group.querySelectorAll('.tab-btn');
     const panels = group.querySelectorAll('.tab-panel');
