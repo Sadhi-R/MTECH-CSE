@@ -10,19 +10,20 @@
   <div id="scroll-progress"></div>
   <nav class="navbar">
     <div class="nav-inner">
-      <a class="brand" href="../index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+      <a class="brand" href="../home.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
       <button class="nav-toggle" id="nav-toggle">☰</button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../index.html#subjects">Subjects</a></li>
+        <li><a href="../home.html">Home</a></li>
+        <li><a href="../home.html#subjects">Subjects</a></li>
         <li><a href="index.html" class="active">Search</a></li>
         <li><a href="../about.html">About</a></li>
       </ul>
+      <a href="#" class="nav-logout-btn" data-logout>Logout</a>
     </div>
   </nav>
 
   <main class="container" style="max-width:900px;padding-top:2rem;">
-    <nav class="breadcrumb"><a href="../index.html">Home</a> · <span>Search</span></nav>
+    <nav class="breadcrumb"><a href="../home.html">Home</a> · <span>Search</span></nav>
     <h1>Search 100+ questions & topics</h1>
     <p class="text-muted mb-2">Search across all four subjects. Filter by subject or question type.</p>
 
@@ -56,6 +57,7 @@
   </main>
 
   <button id="back-top">↑</button>
+  <script src="../assets/js/auth.js"></script>
   <script src="../assets/js/search-data.js"></script>
   <script src="../assets/js/main.js"></script>
   <script>

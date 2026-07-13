@@ -51,7 +51,7 @@ def nav(subject_slug: str, active: str = "", depth: str = "../../", nested: str 
     units = "index.html" if nested == "units" else f"{prefix}units/index.html"
     questions = "index.html" if nested == "questions" else f"{prefix}questions/index.html"
     items = [
-        (f"{depth}index.html", "Home", "home"),
+        (f"{depth}home.html", "Home", "home"),
         (hub, SUBJECTS[subject_slug]["short"], "hub"),
         (units, "Units", "units"),
         (questions, "Questions", "questions"),
@@ -69,10 +69,11 @@ def nav(subject_slug: str, active: str = "", depth: str = "../../", nested: str 
         links.append(f'<li><a href="{href}"{cls}>{label}</a></li>')
     return f"""<div id="scroll-progress"></div>
 <nav class="navbar"><div class="nav-inner">
-<a class="brand" href="{depth}index.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
+<a class="brand" href="{depth}home.html"><span class="brand-mark">M2</span> CSE Sem-2 Hub</a>
 <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
 <ul class="nav-links" id="nav-links">{''.join(links)}</ul>
 <a class="nav-search-btn" href="{depth}search/index.html">⌕ Search</a>
+<a href="#" class="nav-logout-btn" data-logout>Logout</a>
 </div></nav>"""
 
 
@@ -86,6 +87,7 @@ def shell(title: str, subject: str, active: str, body: str, depth: str = "../../
 {nav(subject, active, depth, nested)}
 <main class="container">{body}</main>
 <button id="back-top" title="Back to top">↑</button>
+<script src="{depth}assets/js/auth.js"></script>
 <script src="{depth}assets/js/main.js"></script>
 </body></html>"""
 
@@ -186,7 +188,7 @@ def write_question_pages(subject: str, questions: list) -> list:
         prev_link = f'<a href="{prev_h}"><span class="label">← Previous</span>{esc(prev_q["title"])}</a>' if prev_q else "<span></span>"
         next_link = f'<a class="next" href="{next_h}"><span class="label">Next →</span>{esc(next_q["title"])}</a>' if next_q else "<span></span>"
         content = f"""
-<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">{esc(SUBJECTS[subject]['short'])}</a> · <a href="index.html">Questions</a> · <span>{esc(q['title'][:50])}</span></nav>
+<nav class="breadcrumb"><a href="../../../home.html">Home</a> · <a href="../index.html">{esc(SUBJECTS[subject]['short'])}</a> · <a href="index.html">Questions</a> · <span>{esc(q['title'][:50])}</span></nav>
 <article class="topic question-page">
 <div class="topic-header"><h1>{esc(q['title'])}</h1><div class="badge-row">{badges(q)}</div></div>
 <div class="callout callout-important"><strong class="label">Question</strong><p class="question-text">{esc(q['question'])}</p></div>
@@ -216,11 +218,15 @@ def write_question_pages(subject: str, questions: list) -> list:
 <div class="meta"><span class="badge badge-exam">{esc(q.get('type',''))}</span></div></a>""")
         cards.append("</div>")
     idx_body = f"""
-<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>All Questions</span></nav>
+<nav class="breadcrumb"><a href="../../../home.html">Home</a> · <a href="../index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>All Questions</span></nav>
 <h1>All Questions — {esc(SUBJECTS[subject]['name'])}</h1>
 <p class="text-muted mb-2">{len(questions)} questions with full exam answers. Use Prev/Next inside each page.</p>
 {''.join(cards)}"""
     (qdir / "index.html").write_text(shell("Questions", subject, "questions", idx_body, "../../../", "questions"), encoding="utf-8")
+    valid = {q["id"] + ".html" for q in questions} | {"index.html"}
+    for stale in qdir.glob("*.html"):
+        if stale.name not in valid:
+            stale.unlink()
     return search_entries
 
 
@@ -239,7 +245,7 @@ def write_units(subject: str, units: list) -> None:
         short_html = "<ol class='steps'>" + "".join(f"<li>{esc(s)}</li>" for s in short_q) + "</ol>"
         long_html = "<ol class='steps'>" + "".join(f"<li>{esc(l)}</li>" for l in long_q) + "</ol>"
         body = f"""
-<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">{esc(SUBJECTS[subject]['short'])}</a> · <a href="index.html">Units</a> · <span>{esc(u['title'])}</span></nav>
+<nav class="breadcrumb"><a href="../../../home.html">Home</a> · <a href="../index.html">{esc(SUBJECTS[subject]['short'])}</a> · <a href="index.html">Units</a> · <span>{esc(u['title'])}</span></nav>
 <h1>{esc(u['unit'])} — {esc(u['title'])}</h1>
 <div class="callout callout-tip"><strong class="label">Must read</strong>{must_html}</div>
 <h2>Topics</h2>{topic_html}
@@ -252,7 +258,7 @@ def write_units(subject: str, units: list) -> None:
         (udir / f"{uid}.html").write_text(shell(u["title"], subject, "units", body, "../../../", "units"), encoding="utf-8")
         cards.append(f'<a class="card card-link" href="{uid}.html"><span class="badge badge-unit">{esc(u["unit"])}</span><h3>{esc(u["title"])}</h3><p class="text-sm">{len(topics)} topics</p></a>')
     idx = f"""
-<nav class="breadcrumb"><a href="../../../index.html">Home</a> · <a href="../index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Units</span></nav>
+<nav class="breadcrumb"><a href="../../../home.html">Home</a> · <a href="../index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Units</span></nav>
 <h1>Unit-wise Notes</h1>
 <div class="grid-2">{''.join(cards)}</div>"""
     (udir / "index.html").write_text(shell("Units", subject, "units", idx, "../../../", "units"), encoding="utf-8")
@@ -270,7 +276,7 @@ def write_expected(subject: str, data: dict) -> None:
     short = "".join(f'<li><a href="questions/{s}.html">{esc(id_map.get(s, {}).get("title", s))}</a></li>' for s in data.get("short5", []))
     long_ = "".join(f'<li><a href="questions/{l}.html">{esc(id_map.get(l, {}).get("title", l))}</a></li>' for l in data.get("long5", []))
     body = f"""
-<nav class="breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Expected Questions</span></nav>
+<nav class="breadcrumb"><a href="../../home.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Expected Questions</span></nav>
 <h1>Expected Questions — {esc(SUBJECTS[subject]['name'])}</h1>
 <div class="callout callout-exam"><strong class="label">Question Bank + Past Papers</strong> Click any question for the full clear answer.</div>
 <h2>Top 10 Expected (Semester)</h2>
@@ -298,7 +304,7 @@ def write_past(subject: str, data: dict) -> None:
         lis = "".join(resolve(it) for it in items)
         return f"<h2>{title}</h2><ul class='clean'>{lis}</ul>"
     body = f"""
-<nav class="breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Previous Papers</span></nav>
+<nav class="breadcrumb"><a href="../../home.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Previous Papers</span></nav>
 <h1>Previous Question Papers — {esc(SUBJECTS[subject]['name'])}</h1>
 {f'<div class="callout callout-exam"><strong class="label">Mid-II Paper</strong> Descriptive and objective questions with full answers.</div>' if data.get("mid2_exam") else ''}
 {list_section('Mid-I Descriptive (Answer any 4 × 5 marks)', data.get('mid1_descriptive', []))}
@@ -316,7 +322,7 @@ def write_revision(subject: str, questions: list) -> None:
     formulas = "".join(f"<li>{esc(q.get('one_liner') or q['title'])}</li>" for q in high[:15])
     links = "".join(f'<a class="chip" href="questions/{q["id"]}.html">{esc(q["title"][:30])}</a>' for q in high[:12])
     body = f"""
-<nav class="breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Revision</span></nav>
+<nav class="breadcrumb"><a href="../../home.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Revision</span></nav>
 <h1>Revision Mode — {esc(SUBJECTS[subject]['name'])}</h1>
 <div class="callout callout-tip"><strong class="label">Last-minute</strong> Tick checklist items as you finish. Links below go to full answers.</div>
 <h2>High-weightage quick links</h2><div class="chip-row">{links}</div>
@@ -357,7 +363,7 @@ def write_mid_pages(subject: str, questions: list, which: str) -> None:
 <p class="text-sm">{esc(q['question'][:100])}…</p>
 <div class="meta">{badges(q)}</div></a>""" for q in obj)
         body = f"""
-<nav class="breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Mid-II</span></nav>
+<nav class="breadcrumb"><a href="../../home.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Mid-II</span></nav>
 <h1>{esc(SUBJECTS[subject]['name'])} — Mid-II</h1>
 {exam_hdr}
 <p class="text-muted mb-2">Questions and answers with visual examples.</p>
@@ -380,7 +386,7 @@ def write_mid_pages(subject: str, questions: list, which: str) -> None:
 <p class="text-sm">{esc(q['question'][:120])}</p>
 <div class="meta">{badges(q)}</div></a>""" for q in filtered)
     body = f"""
-<nav class="breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>{which.upper().replace('mid','Mid-')}</span></nav>
+<nav class="breadcrumb"><a href="../../home.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>{which.upper().replace('mid','Mid-')}</span></nav>
 <h1>{esc(SUBJECTS[subject]['name'])} — {which.upper().replace('MID','Mid ')}</h1>
 <p class="text-muted mb-2">Each card opens a dedicated page with the full answer (5-mark / 10-mark / semester versions).</p>
 <div class="grid-2">{cards}</div>
@@ -411,7 +417,7 @@ def write_question_bank_page(subject: str, questions: list) -> None:
             sec += '</ol>'
         sections.append(sec)
     body = f"""
-<nav class="breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Question Bank</span></nav>
+<nav class="breadcrumb"><a href="../../home.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Question Bank</span></nav>
 <h1>Question Bank — {esc(SUBJECTS[subject]['name'])}</h1>
 <div class="callout callout-tip"><strong class="label">All answers written clearly</strong> Every question below links to a dedicated page with definition, steps, examples, 5-mark and 10-mark answers.</div>
 <p class="text-muted mb-2">{len(questions)} questions · {len([q for q in questions if q['type']=='short'])} short · {len([q for q in questions if q['type']=='long'])} long</p>
@@ -422,7 +428,7 @@ def write_question_bank_page(subject: str, questions: list) -> None:
 def write_subject_hub(subject: str, questions: list) -> None:
     info = SUBJECTS[subject]
     body = f"""
-<nav class="breadcrumb"><a href="../../index.html">Home</a> · <span>{esc(info['name'])}</span></nav>
+<nav class="breadcrumb"><a href="../../home.html">Home</a> · <span>{esc(info['name'])}</span></nav>
 <span class="badge badge-unit">{esc(info['code'])}</span>
 <h1>{esc(info['name'])}</h1>
 <p class="text-muted">{len(questions)} questions · Mid-I · Mid-II · Semester</p>
@@ -447,7 +453,7 @@ def write_semester(subject: str, questions: list) -> None:
     long_q = [q for q in questions if q.get("type") == "long" and q.get("weight") == "high"]
     cards = "".join(f'<li><a href="questions/{q["id"]}.html">{esc(q["title"])}</a> — {esc(q.get("confidence",""))}</li>' for q in long_q[:10])
     body = f"""
-<nav class="breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Semester</span></nav>
+<nav class="breadcrumb"><a href="../../home.html">Home</a> · <a href="index.html">{esc(SUBJECTS[subject]['short'])}</a> · <span>Semester</span></nav>
 <h1>Semester Preparation</h1>
 <p>Focus on high-weightage long answers with diagrams and numericals.</p>
 <ol class="steps">{cards}</ol>
@@ -507,20 +513,17 @@ function renderSearchResults(container, query, filters) {
 
 
 def update_home() -> None:
-    cards = ""
-    for slug, info in SUBJECTS.items():
-        n = len(QUESTIONS.get(slug, []))
-        cards += f"""<a class="card card-link" href="subjects/{slug}/index.html">
-<div class="card-icon">{esc(info['short'])}</div>
-<h3>{esc(info['name'])}</h3>
-<p>{n} question pages · 5 units · Mid/Sem/Revision</p>
-<div class="meta"><span class="badge badge-exam">{esc(info['code'])}</span></div></a>"""
-    # patch index - read and update subjects section if needed
-    idx = (ROOT / "index.html").read_text(encoding="utf-8")
-    if "question pages" not in idx:
-        idx = idx.replace("<div class=\"stat\"><div class=\"num\">4</div><div class=\"lbl\">Subjects</div></div>",
-            "<div class=\"stat\"><div class=\"num\">100</div><div class=\"lbl\">Question Pages</div></div>")
-        (ROOT / "index.html").write_text(idx, encoding="utf-8")
+    """Patch home.html stats if needed (index.html is the public login landing)."""
+    home = ROOT / "home.html"
+    if not home.exists():
+        return
+    idx = home.read_text(encoding="utf-8")
+    if "question pages" not in idx.lower():
+        idx = idx.replace(
+            '<div class="stat"><div class="num">4</div><div class="lbl">Subjects</div></div>',
+            '<div class="stat"><div class="num">253</div><div class="lbl">Question Pages</div></div>',
+        )
+        home.write_text(idx, encoding="utf-8")
 
 
 def main():

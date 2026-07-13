@@ -481,3 +481,44 @@ ol.steps li { margin-bottom: 0.5rem; }
 .visual-svg.visual-compact { max-width: 480px; max-height: 220px; }
 .sec-visual { border-top: none; padding-top: 0; }
 .question-page .sec-visual + .answer-section { border-top: 1px dashed var(--border); }
+
+/* ---- Landing / Login ---- */
+.login-page { min-height: 100vh; background: linear-gradient(135deg, #0f172a 0%, #134e4a 50%, #0f172a 100%); }
+.landing-wrap {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; align-items: center;
+  max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem 2rem; min-height: calc(100vh - 60px);
+}
+@media (max-width: 900px) { .landing-wrap { grid-template-columns: 1fr; padding-top: 2rem; } }
+.landing-hero { color: #fff; }
+.landing-eyebrow { color: rgba(255,255,255,.7); font-size: 0.9rem; margin: 0.75rem 0 0.5rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.landing-hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; margin-bottom: 1rem; }
+.landing-lead { color: rgba(255,255,255,.85); font-size: 1.05rem; max-width: 520px; line-height: 1.6; }
+.brand-mark-lg { display: inline-flex; width: 56px; height: 56px; font-size: 1.4rem; align-items: center; justify-content: center; border-radius: 14px; background: var(--teal); color: #fff; font-weight: 800; }
+.landing-features { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0.5rem; }
+.landing-features li {
+  padding: 0.55rem 0.9rem; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px; color: rgba(255,255,255,.9); font-size: 0.95rem;
+}
+.landing-features li::before { content: '✓ '; color: #5eead4; font-weight: 700; }
+.login-card {
+  background: var(--card); border-radius: 16px; padding: 2rem; box-shadow: 0 20px 50px rgba(0,0,0,.25);
+  border: 1px solid var(--border);
+}
+.login-card h2 { margin-bottom: 0.35rem; color: var(--navy); }
+.login-form label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--slate); margin: 1rem 0 0.35rem; }
+.login-form input {
+  width: 100%; padding: 0.8rem 1rem; border-radius: 10px; border: 1.5px solid var(--border);
+  font-size: 1rem; font-family: inherit; box-sizing: border-box;
+}
+.login-form input:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(13,148,136,.15); }
+.login-error { color: var(--rose); font-size: 0.88rem; margin: 0.75rem 0 0; }
+.btn-block { width: 100%; margin-top: 1.25rem; padding: 0.9rem; font-size: 1rem; justify-content: center; }
+.login-credentials { margin-top: 1.5rem; font-size: 0.9rem; }
+.login-credentials p { margin: 0.35rem 0; }
+.landing-footer { text-align: center; padding: 1rem; color: rgba(255,255,255,.5); font-size: 0.85rem; }
+.nav-logout-btn {
+  padding: 0.45rem 0.85rem; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--card); color: var(--slate); font-size: 0.82rem; font-weight: 600;
+  text-decoration: none; margin-left: 0.5rem;
+}
+.nav-logout-btn:hover { border-color: var(--rose); color: var(--rose); background: var(--rose-soft); }
